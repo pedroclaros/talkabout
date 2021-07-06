@@ -1,2 +1,154 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+
+    <h1>Estás buscando eventos<strong> On-Line</strong> para conectar con otras <strong>personas</strong>!</h1>
+    <p>Talk/About te permite buscar cursos, capacitaciones y conversaciones on-line en diferentes partes del mundo.</p>
+
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <br>
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+    
+  </div>
+</div>
+
+<div class="container">
+<br>
+  <a class="btn btn-ghost" href="#">Neogocios</a>
+  <a class="btn btn-ghost" href="#">Salud</a>
+  <a class="btn btn-ghost" href="#">Alimentos</a>
+  <a class="btn btn-ghost" href="#">Vehículos</a>
+  <a class="btn btn-ghost" href="#">Moda</a>
+  <a class="btn btn-ghost" href="#">Tecnología</a>
+  <a class="btn btn-ghost" href="#">Deportes</a>
+  <a class="btn btn-ghost" href="#">Gobierno</a>
+  <a class="btn btn-ghost" href="#">Música</a>
+</div>
+
+<br>
+
+
+
+<!--div class="container">
+    <h2 class = "text-center mt-5">Populares</h2>
+    
+    <div class="cards mt-5">
+       <% @talks.each do |talk| %>   
+       <%= link_to root_path do %>
+
+     <div class="card-trip">
+        <%#= cl_image_tag service.photo.key %>
+            <div class="card-trip-infos">
+            <div>
+            <h2><%=  talk.title %></h2>
+            </div>
+            <h2 class="card-trip-pricing">$<%=  talk.description %></h2>            
+             <%#= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>
+                                               
+        </div>
+        </div>
+         <% end %>
+        <% end %>
+    </div>
+
+    </div-->
+
+
+
+
+<div class="container">
+
+  
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+    <% @talks.each do |talk| %>
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+      <%= link_to root_path do %>      
+        <h5 class="card-title"><%=  talk.title %></h5>
+        <p class="card-text"><%=  talk.description %></p>
+        <p class="card-text">Fecha: <%=  talk.date %></p>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+  
+  <!--div class="col">
+    <div class="card">
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div-->
+
+
+
+
+
+
+</div>
+<br>  
+<br>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Gracias por confiar en <i class="fas fa-heart"></i> Talk/About.
+  </div>
+</div>
