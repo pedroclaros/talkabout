@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :talks do 
     resources :appointments
+    resources :favorites, only: :create
   end
 end
 

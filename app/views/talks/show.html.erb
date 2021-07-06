@@ -5,6 +5,7 @@
   <div class="col-md-8">
     <div class="card-body">
       <h2><strong><%= @talk.title %></strong></h2>
+      <%=render 'favorite/form' if @render = true %>
       <br>
       <h6>Nombre del anfitrión: <strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6></strong>
       <h6>Descripción:  <%= @talk.description %></h6> 
@@ -22,5 +23,4 @@
   </div>
 </div>
 <%= link_to "Volver al inicio!", root_path, class: "btn btn-gradient"%>
-
-
+ 

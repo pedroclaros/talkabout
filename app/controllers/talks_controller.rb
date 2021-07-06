@@ -7,6 +7,8 @@ class TalksController < ApplicationController
 
     def show
       @talk = Talk.find(params[:id])
+      @favorite = Favorite.new
     end
+    
 
 end
