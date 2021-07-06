@@ -65,7 +65,7 @@ talk1.save!
 talk2 = Talk.new(title: "Creando una empresa de consultorias", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1)
 talk2.save!
 
-talk3 = Talk.new(title: "Meditacion en 20 minutos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "12:00", category: category9, price: 500, user: user1)
+talk3 = Talk.new(title: "Meditacion en 20 minutos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1)
 talk3.save!
 
 talk4 = Talk.new(title: "Preparacion de cerveza artesanal", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "15:00", capacity: 5, category: category2, price: 1200, user: user1)
