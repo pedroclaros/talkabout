@@ -1,9 +1,8 @@
 class Talk < ApplicationRecord
-  # belongs_to :project 
-  # belongs_to :favorite
-  has_many :categories
+  belongs_to :category
   has_many :appointments
   has_many :users, through: :appointments
+  belongs_to :user
 
   validates :title, presence: true
   validates :description, length: { minimum: 15, maximum: 50 }

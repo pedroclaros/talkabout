@@ -8,6 +8,7 @@ class CreateTalks < ActiveRecord::Migration[6.0]
       t.integer :capacity
       t.references :category, null: false, foreign_key: true
       t.integer :price
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
