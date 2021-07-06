@@ -7,7 +7,7 @@ class Talk < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true
-  validates :description, length: { minimum: 15, maximum: 50 }
+  validates :description, length: { minimum: 15, maximum: 150 }
   validates :time, presence: true
   validates :date, presence: true
 end
