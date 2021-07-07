@@ -10,4 +10,12 @@ class Talk < ApplicationRecord
   validates :description, length: { minimum: 15, maximum: 150 }
   validates :time, presence: true
   validates :date, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_with_pg,
+    against: [ :price, :date, :title, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

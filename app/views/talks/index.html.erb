@@ -1,4 +1,39 @@
-<p>Index de Talks</p>
-<%@talks.each do |talk|%>
- <%=talk.title%>
-<%end%>
+<div class="container">
+
+  <h1>Index de Talks</h1>
+
+<%###################### Búsqueda por palabra clave %>
+  <%= form_tag talks_path, method: :get do %>
+
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Palabra Clave"
+    %>
+
+    <%= submit_tag "Search", class: "btn btn-primary mb-5" %>
+
+  <% end %>
+
+<%###################### Filtros %>
+  <%= form_tag talks_path, method: :get do %>
+    <%= range_field_tag "query[price]", min: 1, max: 1000 %>   
+    <%= date_field_tag "query[date]", class: "form-control" %>
+    <%= submit_tag "Search", class: "btn btn-primary mb-5" %>
+  <% end %>
+
+
+<%###################### TODO %>
+  <%@talks.each do |talk|%>
+    <div class="card-product mb-4">
+    <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
+      <div class="card-product-infos">
+        <p><%=talk.date%></p>
+        <h2><%=talk.title%></h2>
+        <p><%=talk.description%></p>
+        <p><%=talk.price%></p>
+      </div>
+    </div>
+  <%end%>
+
+</div>
