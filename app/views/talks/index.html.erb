@@ -1,4 +1,39 @@
-<p>Index de Talks</p>
-<%@talks.each do |talk|%>
- <%=talk.title%>
-<%end%>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 col-lg-3">
+        <%###################### Búsqueda por palabra clave %>
+            <%= form_tag talks_path, method: :get do %>
+              <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Palabra Clave"%>
+              <%= submit_tag "Buscar", class: "btn btn-primary mb-5" %>
+            <% end %>
+
+        <%###################### Filtros %>
+            <%= form_tag talks_path, method: :get do %>
+              
+              <%Category.pluck(:title).each do |category|%>
+              <%= check_box_tag(category)%>
+              <%= label_tag(category, "#{category}")%>
+              <%end%>
+
+
+              <%= date_field_tag :filter, params[:filter] ,class: "form-control", placeholder: "Palabra Clave"%>
+              <%= submit_tag "Aplicar filtros", class: "btn btn-primary mb-5" %>
+            <% end %>
+    </div>
+    <div class="col-12 col-lg-9">
+      <%###################### CARDS %>
+        <%@talks.each do |talk|%>
+          <div class="card-product mb-4">
+            <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
+            <div class="card-product-infos">
+              <p><%=talk.date%></p>
+              <h2><%=talk.title%></h2>
+              <p><%=talk.description%></p>
+              <p><%=talk.price%></p>
+              <p><%=talk.category.title%></p>
+            </div>
+          </div>
+        <%end%>
+    </div>
+  </div>
+</div>
