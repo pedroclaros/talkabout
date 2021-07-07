@@ -1,2 +1,179 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+
+    <h1>Estás buscando eventos<strong> On-Line</strong> para conectar con otras <strong>personas</strong>!</h1>
+    <br>
+    <p>Talk/About te permite buscar cursos, capacitaciones y conversaciones on-line en diferentes partes del mundo.</p>
+    <p>También podes crear tu propia conversación para que otros conecten contigo!</p>  
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      <br>
+      <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+      </button>
+      </div>
+    </form>    
+  </div>
+</div-->
+
+
+
+
+
+<div class="card">
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://miracomosehace.com/wp-content/uploads/2020/04/chica-viendo-clase-por-zoom.jpg" width = "300px" height = "300px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Estás buscando eventos<strong> On-Line</strong> para conectar con otras <strong>personas</strong>!</h5>
+        <p>Usa Talk/About!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.nativos.org/wp-content/uploads/2020/03/clases-de-ingles-por-videoconferencia-880x480.jpg.webp" width = "300px" height = "300px" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Talk/About te permite buscar cursos, capacitaciones y conversaciones on-line en diferentes partes del mundo.</h5>
+        <p>Usa Talk/About para aprender o divertirte!</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.eltiempo.com/files/image_640_428/uploads/2020/05/14/5ebe0e60a7fff.jpeg" width = "300px" height = "300px" class="d-block w-100 " alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>También podes crear tu propia conversación para que otros conecten contigo!</h5>
+        <p>Usa Talk/About para conectar con otros.</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<br>
+  <a class="btn btn-ghost" href="#">Neogocios</a>
+  <a class="btn btn-ghost" href="#">Salud</a>
+  <a class="btn btn-ghost" href="#">Alimentos</a>
+  <a class="btn btn-ghost" href="#">Vehículos</a>
+  <a class="btn btn-ghost" href="#">Moda</a>
+  <a class="btn btn-ghost" href="#">Tecnología</a>
+  <a class="btn btn-ghost" href="#">Deportes</a>
+  <a class="btn btn-ghost" href="#">Gobierno</a>
+  <a class="btn btn-ghost" href="#">Música</a>
+</div>
+
+<br>
+
+
+<!--div class="container">
+    <h2 class = "text-center mt-5">Populares</h2>
+    
+    <div class="cards mt-5">
+       <% @talks.each do |talk| %>   
+       <%= link_to root_path do %>
+
+     <div class="card-trip">
+        <%#= cl_image_tag service.photo.key %>
+            <div class="card-trip-infos">
+            <div>
+            <h2><%=  talk.title %></h2>
+            </div>
+            <h2 class="card-trip-pricing">$<%=  talk.description %></h2>            
+             <%#= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>
+                                               
+        </div>
+        </div>
+         <% end %>
+        <% end %>
+    </div>
+
+    </div-->
+
+<div class="container">
+    <h2 class = "text-center mt-5">Más Buscados</h2>
+    
+
+
+    <div class="cards mt-5">
+    <% @talks.each do |talk| %>   
+    <%= link_to root_path do %>
+
+    <div class="card-trip">
+        <%#= cl_image_tag service.photo.key %>
+            <div class="card-trip-infos">
+            <div>
+            <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+            <br>
+            <br>
+            <div class="card-title">
+            <h5><strong><%=  talk.title %>.!</strong></h5>
+            <%# <%= link_to "Ver más..", service_path(service) %>
+            <p class="card-trip-pricings"><%=  talk.description %></p>            
+            <p class="card-trip-pricing">Fecha: <%=  talk.date.strftime('%a %d %b %Y') %></p>
+            </div>
+            <% #=user = @users.sample %>
+              <%#= img src="https://avatars.githubusercontent.com/u/62758510?v=4" alt="user" class= "card-trip-user avatar-bordered"> %>
+              <%##= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>
+              <%# <%= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>                                 
+        </div>
+        </div>
+        </div>
+         <% end %>
+        <% end %>
+    </div>
+</div>    
+
+
+
+
+<br>  
+<br>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Gracias por confiar en <i class="fas fa-heart"></i> Talk/About.
+  </div>
+</div>

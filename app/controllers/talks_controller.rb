@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
   
   def index 
     categories = Category.pluck(:title)
@@ -39,6 +39,10 @@ class TalksController < ApplicationController
         @talks = Talk.search_with_pg(params[:query] || params[:filter])
       end  
     end
+  end
+ 
+  def show
+    @talk = Talk.find(params[:id])
   end
 
 end
