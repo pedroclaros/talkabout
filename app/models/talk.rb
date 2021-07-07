@@ -14,6 +14,9 @@ class Talk < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_with_pg,
     against: [ :price, :date, :title, :description ],
+    associated_against: {
+      category: [:title]
+    },
     using: {
       tsearch: { prefix: true }
     }

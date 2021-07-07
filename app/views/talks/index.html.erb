@@ -3,27 +3,30 @@
   <h1>Index de Talks</h1>
 
 <%###################### Búsqueda por palabra clave %>
-  <%= form_tag talks_path, method: :get do %>
-
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Palabra Clave"
-    %>
-
-    <%= submit_tag "Search", class: "btn btn-primary mb-5" %>
-
-  <% end %>
+  <div>
+    <%= form_tag talks_path, method: :get do %>
+      <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Palabra Clave"%>
+      <%= submit_tag "Buscar", class: "btn btn-primary mb-5" %>
+    <% end %>
+  </div>
 
 <%###################### Filtros %>
-  <%= form_tag talks_path, method: :get do %>
-    <%= range_field_tag "query[price]", min: 1, max: 1000 %>   
-    <%= date_field_tag "query[date]", class: "form-control" %>
-    <%= submit_tag "Search", class: "btn btn-primary mb-5" %>
-  <% end %>
+  <div>
+    <%= form_tag talks_path, method: :get do %>
+      
+      <%Category.pluck(:title).each do |category|%>
+      <%= check_box_tag(category) %>
+      <%= label_tag(category, "#{category}")%>
+      <%end%>
 
 
-<%###################### TODO %>
+      <%= date_field_tag :filter, params[:filter] ,class: "form-control", placeholder: "Palabra Clave"%>
+      <%= submit_tag "Aplicar filtros", class: "btn btn-primary mb-5" %>
+    <% end %>
+  </div>
+
+
+<%###################### CARDS %>
   <%@talks.each do |talk|%>
     <div class="card-product mb-4">
     <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
@@ -32,6 +35,7 @@
         <h2><%=talk.title%></h2>
         <p><%=talk.description%></p>
         <p><%=talk.price%></p>
+        <p><%=talk.category.title%></p>
       </div>
     </div>
   <%end%>
