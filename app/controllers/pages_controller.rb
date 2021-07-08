@@ -5,8 +5,6 @@ class PagesController < ApplicationController
     @talks = Talk.all.first(9)
   end
 
-  
-
-
-
+  def myprofile
+  end
 end

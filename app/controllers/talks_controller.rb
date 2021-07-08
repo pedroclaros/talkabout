@@ -9,6 +9,8 @@ class TalksController < ApplicationController
         selected_categories << Category.find_by(title: p)
       end
     end
+    
+    
     @talks = Talk.all
     if selected_categories != []
       @talks = []
@@ -40,9 +42,29 @@ class TalksController < ApplicationController
       end  
     end
   end
- 
+  
   def show
     @talk = Talk.find(params[:id])
+    @appointment = Appointment.new
+    @favorite = Favorite.new
+  end
+  
+  def new
+    @talk = Talk.new
+  end
+
+  def create
+    @talk = Talk.new(talk_params)
+    @talk.user = current_user
+    if @talk.save
+      redirect_to talk_path(@talk)
+    else
+      render :new
+    end
+  end
+
+  def talk_params
+    params.require(:talk).permit(:title, :description, :time, :date, :category_id, :photo)
   end
 
 end

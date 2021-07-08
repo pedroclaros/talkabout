@@ -1,0 +1,40 @@
+
+<div>
+  <h2 class= "m-4"><strong> Mis appointments</h2></strong>
+
+  <% appointments = Appointment.where(user: current_user) %>
+  <% appointments.each do |app| %>
+
+  <div class="card m-3 shadow p-3 bg-white rounded w-50">
+    <h4><%= app.talk.title %></h4>
+    <div class="row g-0">
+      <div class="col-md-4">
+      <%# <%= cl_image_tag app.service.photo.key, class: "img-fluid rounded-start" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6><strong> Id de la charla: </strong> <%= app.talk_id %><!--<strong>Id del usuario: </strong><%= app.user_id %></h6>-->
+          <h6>Nombre del anfitrion: <strong><%= app.talk.user.first_name %>, <%= app.talk.user.last_name %></h6></strong>
+          <h6>Descripción: <strong> <%= app.talk.description %></h6> </strong>
+          <h6>Precio Pesos ARG, por hora: <strong>$ <%= app.talk.price.to_i %></h6></strong>
+          <h6>Fecha y hora: <strong><%= app.talk.date %> / <%= app.talk.time.strftime("%I:%M %p")%></h6></strong>
+          <h6>Capacidad: <strong><%= app.talk.capacity.to_i %> personas</h6></strong>
+          <br>
+          <h6>Informacion de la charla: <strong><%= app.talk.info %></h6></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</div>
+
+<div>
+<h2 class= "m-4"><strong> Mis favoritos</h2></strong>
+<% favoritos = current_user.all_favorited%>
+
+<% favoritos.each_with_index do |app, index| %>
+  <div class="card m-3 shadow p-3 bg-white rounded w-50">
+  <h6><%= favoritos[index].title %> --- <%= favoritos[index].date %></h6> 
+</div>
+<% end %>
+</div>
