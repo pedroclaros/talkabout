@@ -24,29 +24,34 @@
           Menu
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ver todo</a>
+          <%= link_to "Todos los Eventos", talks_path, class: "dropdown-item" %>
+          <%= link_to "Ir al Buscador", talks_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="#">Tecnología</a>
           <a class="dropdown-item" href="#">Moda</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Volver al home</a>
+          <%= link_to "Volver al home", root_path, class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#"></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      
+        <%= form_tag talks_path, method: :get do %>
+          <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Buscar"%>
+          <br>
+          <%= submit_tag "Buscar", class: "btn btn-outline-danger mb-50" %>
+        <% end %>
+      
   </div>
 </nav>
 
 
 
-
-
-
+    <!--form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+    </form-->
 
 
 
