@@ -48,4 +48,22 @@ class TalksController < ApplicationController
     @appointment = Appointment.new
   end
   
+  def new
+    @talk = Talk.new
+  end
+
+  def create
+    @talk = Talk.new(talk_params)
+    @talk.user = current_user
+    if @talk.save
+      redirect_to talk_path(@talk)
+    else
+      render :new
+    end
+  end
+
+  def talk_params
+    params.require(:talk).permit(:title, :description, :time, :date, :category_id)
+  end
+
 end
