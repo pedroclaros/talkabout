@@ -17,11 +17,19 @@
       <h6>Hora: <%= @talk.time.strftime("%I:%M %p") %></h6>
       <h6>Categoria: <strong><%= @talk.category.title %> </h6></strong>
       <h6>Capacidad: <%= @talk.capacity %> personas </h6>
-       <%#= link_to "Marcar como favorito", new_talk_appointment_path(@talk), class: "btn btn-gradient" %> 
     </div>
     <div class= "container">
+      <% unless @talk.user == current_user %>
           <%=render 'appointments/form' %>        
+        <% if current_user.favorited?(@talk)%> 
+          <h4 class= "btn btn-warning w-100 mb-3">Ya esta agregado a favoritos</h4>
+        <% else %>     
           <%=render 'favorite/form' %> 
+        <% end %>
+      <% end %>
+    
+            
+            
       </div>
     </div>
   </div>
