@@ -19,6 +19,8 @@
           <h6>Precio Pesos ARG, por hora: <strong>$ <%= app.talk.price.to_i %></h6></strong>
           <h6>Fecha y hora: <strong><%= app.talk.date %> / <%= app.talk.time.strftime("%I:%M %p")%></h6></strong>
           <h6>Capacidad: <strong><%= app.talk.capacity.to_i %> personas</h6></strong>
+          <br>
+          <h6>Informacion de la charla: <strong><%= app.talk.info %></h6></strong>
         </div>
       </div>
     </div>
@@ -28,4 +30,11 @@
 
 <div>
 <h2 class= "m-4"><strong> Mis favoritos</h2></strong>
+<% favoritos = current_user.all_favorited%>
+
+<% favoritos.each_with_index do |app, index| %>
+  <div class="card m-3 shadow p-3 bg-white rounded w-50">
+  <h6><%= favoritos[index].title %> --- <%= favoritos[index].date %></h6> 
+</div>
+<% end %>
 </div>

@@ -1,12 +1,11 @@
 <div class = "container mt-3">
 
-<h3>Detalles de la charla:</h1>
+<h3><strong>Detalles de la charla:</strong></h3>
 <div class="card m-3 shadow p-3 bg-white rounded" style="max-width: 1200px;">
-  <div class="col-md-8">
+  <div class="col-md-8 shadow bg-white rounded">
     <div class="card-body">
-      <h2><strong><%= @talk.title %></strong></h2>
-      <%# <%=render 'favorite/form' %> 
-      <%=render 'appointments/form' %> 
+      <h4><strong><%= @talk.title %></strong></h4>
+      <br>
       <br>
       <h6>Nombre del anfitrión: <strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6></strong>
       <h6>Descripción:  <%= @talk.description %></h6> 
@@ -16,6 +15,11 @@
       <h6>Categoria: <strong><%= @talk.category.title %> </h6></strong>
       <h6>Capacidad: <%= @talk.capacity %> personas </h6>
        <%#= link_to "Marcar como favorito", new_talk_appointment_path(@talk), class: "btn btn-gradient" %> 
+    </div>
+    <div class= "container">
+          <%=render 'appointments/form' %>        
+          <%=render 'favorite/form' %> 
+      </div>
     </div>
   </div>
   <div class="col-md-4">
