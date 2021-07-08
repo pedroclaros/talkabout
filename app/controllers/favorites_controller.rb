@@ -2,16 +2,13 @@ class FavoritesController < ApplicationController
 
   def create
     @talk = Talk.find(params[:talk_id])
-    @favorite = Favorite.new()
-    @favorite.user = current_user
-    @favorite.talk = @talk
-    @render = true
-    if @favorite.save
+    current_user.favorite(@talk)
+    # @favorite = Favorite.new
+    # @favorite.user = current_user
+    # @favorite.talk = @talk
+    # @render = true
       flash[:notice] = "Agregado a favoritos"
-      @render = false
       redirect_to talk_path(@talk)
-
-    end
   end
 
   # if @appointment.save

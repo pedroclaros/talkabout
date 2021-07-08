@@ -1,0 +1,7 @@
+<h1>hola</h1>
+
+<%favorites= current_user.all_favorited %>
+
+<% favorites.each do |f| %>
+<%= f.favorited %>
+<% end %>

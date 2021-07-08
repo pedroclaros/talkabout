@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @talks = Talk.all
   end
+
+  def myprofile
+  end
 end
