@@ -12,7 +12,7 @@ require 'faker'
 #DESTROY
 puts "destroying database"
 Appointment.destroy_all
-Favorite.destroy_all
+# Favorite.destroy_all
 Talk.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -110,10 +110,10 @@ appointment5.save
 
 
 # #CREATE FAVORITES
-favorite1 = Favorite.create(talk: talk1, user: user3)
-favorite1 = Favorite.create(talk: talk5, user: user3)
-favorite1 = Favorite.create(talk: talk6, user: user4)
-favorite1 = Favorite.create(talk: talk7, user: user4)
+# favorite1 = Favorite.create(talk: talk1, user: user3)
+# favorite1 = Favorite.create(talk: talk5, user: user3)
+# favorite1 = Favorite.create(talk: talk6, user: user4)
+# favorite1 = Favorite.create(talk: talk7, user: user4)
 
 
 

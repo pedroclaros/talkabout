@@ -9,6 +9,8 @@ class TalksController < ApplicationController
         selected_categories << Category.find_by(title: p)
       end
     end
+    
+    
     @talks = Talk.all
     if selected_categories != []
       @talks = []
@@ -40,9 +42,10 @@ class TalksController < ApplicationController
       end  
     end
   end
- 
+  
   def show
     @talk = Talk.find(params[:id])
+    @appointment = Appointment.new
   end
-
+  
 end
