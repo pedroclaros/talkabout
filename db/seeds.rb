@@ -59,34 +59,34 @@ category12 = Category.create(title: "Otros")
 #CREATE TALKS
 
 #javascript
-talk1 = Talk.new(title: "Javascript para dummies", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "15:00", capacity: 10, category: category7, price: 1000, user: user1)
+talk1 = Talk.new(title: "Javascript para dummies", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "15:00", capacity: 10, category: category7, price: 1000, user: user1, info: "zoom meeting id: 1532498740 / password: javascript")
 talk1.save!
 
-talk2 = Talk.new(title: "Creando una empresa de consultorias", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1)
+talk2 = Talk.new(title: "Creando una empresa de consultorias", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
 talk2.save!
 
-talk3 = Talk.new(title: "Meditacion en 20 minutos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1)
+talk3 = Talk.new(title: "Meditacion en 20 minutos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1, info: "zoom meeting id: 7478317419 / password: meditacion")
 talk3.save!
 
-talk4 = Talk.new(title: "Preparacion de cerveza artesanal", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "15:00", capacity: 5, category: category2, price: 1200, user: user1)
+talk4 = Talk.new(title: "Preparacion de cerveza artesanal", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "15:00", capacity: 5, category: category2, price: 1200, user: user1, info: "zoom meeting id: 9617453698 / password: cerveza")
 talk4.save!
 
-talk5 = Talk.new(title: "Como escojer el coche adecuado para ti", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "18:00", capacity: 20, category: category5, user: user2)
+talk5 = Talk.new(title: "Como escojer el coche adecuado para ti", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "18:00", capacity: 20, category: category5, user: user2, info: "zoom meeting id: 1528747483 / password: coche")
 talk5.save!
 
-talk6 = Talk.new(title: "Preparacion para corre un maratón", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "15:00", capacity: 10, category: category6, price: 1000, user: user2)
+talk6 = Talk.new(title: "Preparacion para corre un maratón", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "15:00", capacity: 10, category: category6, price: 1000, user: user2, info: "zoom meeting id: 6563018740 / password: maratón")
 talk6.save!
 
-talk7 = Talk.new(title: "Como cuidarte en epocas de pandemia", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-18", time: "11:00", capacity: 12, category: category3, price: 800, user: user2)
+talk7 = Talk.new(title: "Como cuidarte en epocas de pandemia", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-18", time: "11:00", capacity: 12, category: category3, price: 800, user: user2, info: "zoom meeting id: 7858777209 / password: pandemia")
 talk7.save!
 
-talk8 = Talk.new(title: "Estiramientos adecuados antes de nadar", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-18", time: "17:00", capacity: 15, category: category6, price: 1000, user: user2)
+talk8 = Talk.new(title: "Estiramientos adecuados antes de nadar", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-18", time: "17:00", capacity: 15, category: category6, price: 1000, user: user2, info: "zoom meeting id: 9981014547 / password: nadar")
 talk8.save!
 
-talk9 = Talk.new(title: "Primeros pasos para ser un gran pianista", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-20", time: "10:00", capacity: 5, category: category4, price: 1300, user: user2)
+talk9 = Talk.new(title: "Primeros pasos para ser un gran pianista", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-20", time: "10:00", capacity: 5, category: category4, price: 1300, user: user2, info: "zoom meeting id: 8700145257 / password: pianista")
 talk9.save!
 
-talk10 = Talk.new(title: "Como diseñar zapatos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-20", time: "16:00", capacity: 20, category: category8, price: 750, user: user2)
+talk10 = Talk.new(title: "Como diseñar zapatos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-20", time: "16:00", capacity: 20, category: category8, price: 750, user: user2, info: "zoom meeting id: 6599870145 / password: zapatos")
 talk10.save!
 
 
