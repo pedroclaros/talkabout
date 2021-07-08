@@ -23,16 +23,22 @@
     <div class="col-12 col-lg-9">
       <%###################### CARDS %>
         <%@talks.each do |talk|%>
-          <div class="card-product mb-4">
-            <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
-            <div class="card-product-infos">
-              <p><%=talk.date%></p>
-              <h2><%=talk.title%></h2>
-              <p><%=talk.description%></p>
-              <p><%=talk.price%></p>
-              <p><%=talk.category.title%></p>
+          <%= link_to talk_path(talk) do %>
+            <div class="card-product mb-4">
+              <% if talk.photo.attached? %> 
+                <%= cl_image_tag talk.photo.key %>
+              <% else %>
+                <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
+              <% end %> 
+              <div class="card-product-infos">
+                <p><%=talk.date%></p>
+                <h2><%=talk.title%></h2>
+                <p><%=talk.description%></p>
+                <p><%=talk.price%></p>
+                <p><%=talk.category.title%></p>
+              </div>
             </div>
-          </div>
+          <%end%> 
         <%end%>
     </div>
   </div>
