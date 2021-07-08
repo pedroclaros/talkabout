@@ -8,6 +8,9 @@
       <%# <%=render 'favorite/form' %> 
       <%=render 'appointments/form' %> 
       <br>
+      <% if @talk.photo.attached? %> 
+      <%= cl_image_tag @talk.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %> 
       <h6>Nombre del anfitrión: <strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6></strong>
       <h6>Descripción:  <%= @talk.description %></h6> 
       <h6>Precio Pesos ARG: $ <%= @talk.price.to_i %></h6>
