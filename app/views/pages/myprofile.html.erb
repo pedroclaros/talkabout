@@ -1,4 +1,31 @@
+<div>
+  <h2 class= "m-4"><strong> Mis eventos creados</h2></strong>
 
+  <% talks = Talk.where(user: current_user) %>
+  <% talks.each do |talk| %>
+
+  <div class="card m-3 shadow p-3 bg-white rounded w-50">
+    <h4><%= talk.title %></h4>
+    <div class="row g-0">
+      <div class="col-md-4">
+      <%# <%= cl_image_tag app.service.photo.key, class: "img-fluid rounded-start" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6><strong> Id de la charla: </strong> <%= talk.id %>
+          <h6>Nombre del anfitrion: <strong><%= talk.user.first_name %>, <%= talk.user.last_name %></h6></strong>
+          <h6>Descripción: <strong> <%= talk.description %></h6> </strong>
+          <h6>Precio Pesos ARG, por hora: <strong>$ <%= talk.price.to_i %></h6></strong>
+          <h6>Fecha y hora: <strong><%= talk.date %> / <%= talk.time.strftime("%I:%M %p")%></h6></strong>
+          <h6>Capacidad: <strong><%= talk.capacity.to_i %> personas</h6></strong>
+          <br>
+          <h6>Informacion de la charla: <strong><%= talk.info %></h6></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+</div>
 <div>
   <h2 class= "m-4"><strong> Mis appointments</h2></strong>
 
