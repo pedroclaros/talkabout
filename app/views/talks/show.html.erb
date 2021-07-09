@@ -12,7 +12,11 @@
       <% end %> 
       <h6>Nombre del anfitrión: <strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6></strong>
       <h6>Descripción:  <%= @talk.description %></h6> 
-      <h6>Precio Pesos ARG: $ <%= @talk.price.to_i %></h6>
+      <% if @talk.price.present? && @talk.price > 0 %> 
+        <h6>Precio Pesos ARG: $ <%= @talk.price.to_i %></h6>
+      <% else %> 
+        <h6>Precio: FREE</h6>
+      <% end %> 
       <h6>Fecha: <%= @talk.date %></h6>
       <h6>Hora: <%= @talk.time.strftime("%I:%M %p") %></h6>
       <h6>Categoria: <strong><%= @talk.category.title %> </h6></strong>
@@ -21,7 +25,7 @@
     <div class= "container">
       <% unless @talk.user == current_user %>
           <%=render 'appointments/form' %>        
-        <% if current_user.favorited?(@talk)%> 
+        <% if current_user&.favorited?(@talk)%> 
           <h4 class= "btn btn-warning w-100 mb-3">Ya esta agregado a favoritos</h4>
         <% else %>     
           <%=render 'favorite/form' %> 
