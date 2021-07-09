@@ -72,10 +72,12 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: black;
   opacity: 0.15;
@@ -83,9 +85,11 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
+
 .footer .fa-heart {
   color: #D23333;
 }
@@ -133,19 +137,64 @@
 }
 
 
-.card-trip-infos {
-  color: black;
-  background-color: rgb(216, 221, 221);
-  border-radius: 20px;
+//.card-trip-infos {
+//  color: black;
+//  background-color: rgb(216, 221, 221);
+//  border-radius: 20px;
+//}
+
+
+//.card-title {
+//  margin-left: 10px;
+//  height: 180px;
+
+//}
+
+//.card-trip-pricing {
+//  color: red; 
+//}
+
+
+//Nueva card
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100%;
+}
+
+.card-trip > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
 }
 
 
-.card-title {
-  margin-left: 10px;
-  height: 180px;
-
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }
 
-.card-trip-pricing {
-  color: red; 
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
+

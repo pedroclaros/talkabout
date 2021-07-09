@@ -37,11 +37,12 @@
       </li>
     </ul>
       
-        <%#= form_tag talks_path, method: :get do %>
-          <%#= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Buscar"%>
-          <%#= submit_tag "Buscar", class: "btn btn-outline-danger mb-50" %>
-        <%# end %>
-      
+
+        <%= form_tag talks_path, method: :get, class:"form-inline" do %>
+          <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Buscar"%>
+          <%= submit_tag "Buscar", class: "btn btn-outline-danger mb-50" %>
+        <% end %>
+          
   </div>
 </nav>
 
