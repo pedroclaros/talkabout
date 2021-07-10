@@ -1,18 +1,19 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-  <%= image_tag "logo.svg" %>
- <% end %>
+
+<!--div class="navbar navbar-expand-sm navbar-light navbar-lewagon"-->
+  <%#= link_to "/", class: "navbar-brand" do %>
+  <%#= image_tag "logo.svg" %>
+ <%#= end %>
 
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-4 fixed-top">
+<!--nav class="navbar navbar-expand-lg navbar-light bg-light"-->
   <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
       </li>
@@ -43,11 +44,10 @@
 
         <%= form_tag talks_path, method: :get, class:"form-inline" do %>
           <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Buscar"%>
-          <%= submit_tag "Buscar", class: "btn btn-outline-danger mb-50" %>
+          <%= submit_tag "Buscar", class: "btn btn-warning  mb-50" %>
         <% end %>
           
   </div>
-</nav>
 
 
     <!--form class="form-inline my-2 my-lg-0">
@@ -86,6 +86,44 @@
     </ul>
   </div>
 </div>
+
+
+</nav>
+
+
+
+
+<!--nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">Talk/About</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#learn" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#questions" class="nav-link">Questions</a>
+            </li>
+            <li class="nav-item">
+              <a href="#instructors" class="nav-link">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav-->
+
+
+
 
 
 
