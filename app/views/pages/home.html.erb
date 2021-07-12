@@ -85,7 +85,7 @@
     <section class="bg-primary text-light p-5">
       <div class="container">
         <div class="d-md-flex justify-content-between align-items-center">
-          <h3 class="mb-3 mb-md-0">Suscribete para que te informemos de los eventos de tu interés!</h3>      
+          <h3 class="mb-3 mb-md-0">Suscribite para que te informemos de los eventos de tu interés!</h3>      
 
           <div class="input-group news-input w-25 mr-100">
             <input type="text" class="form-control" placeholder="Email" />
@@ -110,6 +110,7 @@
 <div class="cards" >
   <% @talks.each do |talk| %>   
     <%= link_to talk_path(talk) do %>
+    <%#= link_to talk_path(talk), style:"text-decoration:none" do %>
     <div class="card-trip">
     <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" />
 
@@ -126,6 +127,10 @@
   <% end %>
 </div>
 </div>
+
+
+
+
 
 
 
@@ -336,9 +341,10 @@
 
     <section id="instructors" class="p-5 bg-primary">
       <div class="container">
-        <h2 class="text-center text-white">Te sugerimos:</h2>
+        <h2 class="text-center text-white">Our Instructors</h2>
         <p class="lead text-center text-white mb-5">
-          Eventos de gran concurrencia! 
+          Our instructors all have 5+ years working as a web developer in the
+          industry
         </p>
         <div class="row g-4">
           <div class="col-md-6 col-lg-3">
