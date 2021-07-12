@@ -2,7 +2,7 @@
 
 <h3><strong>Detalles de la charla:</strong></h3>
 <div class="card m-3 shadow p-3 bg-white rounded" style="max-width: 1200px;">
-  <div class="col-md-8 shadow bg-white rounded">
+  <div class="col-md-12 shadow bg-white rounded">
     <div class="card-body">
       <h4><strong><%= @talk.title %></strong></h4>
       <br>
@@ -10,17 +10,19 @@
       <% if @talk.photo.attached? %> 
       <%= cl_image_tag @talk.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %> 
-      <h6>Nombre del anfitrión: <strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6></strong>
-      <h6>Descripción:  <%= @talk.description %></h6> 
+      <h6><strong>Nombre del anfitrión: </strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6>
+      <br>
+      <h6><strong>Descripción: </strong> <%= @talk.explanation %></h6>
+      <br>
       <% if @talk.price.present? && @talk.price > 0 %> 
-        <h6>Precio Pesos ARG: $ <%= @talk.price.to_i %></h6>
+        <h6><strong>Precio Pesos ARG: </strong>$ <%= @talk.price.to_i %></h6>
       <% else %> 
-        <h6>Precio: FREE</h6>
+        <h6><strong>Precio: FREE </strong></h6>
       <% end %> 
-      <h6>Fecha: <%= @talk.date %></h6>
-      <h6>Hora: <%= @talk.time.strftime("%I:%M %p") %></h6>
-      <h6>Categoria: <strong><%= @talk.category.title %> </h6></strong>
-      <h6>Capacidad: <%= @talk.capacity %> personas </h6>
+      <h6><strong>Fecha: </strong><%= @talk.date %></h6>
+      <h6><strong>Hora: </strong><%= @talk.time.strftime("%I:%M %p") %></h6>
+      <h6><strong>Categoria: </strong><%= @talk.category.title %> </h6>
+      <h6><strong>Capacidad: </strong><%= @talk.capacity %> personas </h6>
     </div>
     <div class= "container">
       <% unless @talk.user == current_user %>
@@ -42,5 +44,5 @@
     <% %>
   </div>
 </div>
-<%= link_to "Volver al inicio!", root_path, class: "btn btn-gradient"%>
+<%# <%= link_to "Volver al inicio!", root_path, class: "btn btn-secondary "%>
  
