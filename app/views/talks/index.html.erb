@@ -26,16 +26,17 @@
       <%###################### CARDS %>
         <%@talks.each do |talk|%>
           <%= link_to talk_path(talk) do %>
-            <div class="card-product mb-4">
+            <div class="card-product mb-4 p-2" style="height: 150px">
               <% if talk.photo.attached? %> 
                 <%= cl_image_tag talk.photo.key %>
               <% else %>
                 <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
               <% end %> 
               <div class="card-product-infos">
-                <p>Fecha: <%=talk.date%></p>
+                <p>Fecha:  <%=talk.date%></p>
                 <h2><%=talk.title%></h2>
-                <p>Descripción:<%=talk.description%></p>
+                <br>
+                <p><%=talk.description%></p>
                 <p> <strong>Precio: </strong><%=talk.price%> $ARG</p>
                 <p><%=talk.category.title%></p>
               </div>
