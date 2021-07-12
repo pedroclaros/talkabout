@@ -5,7 +5,7 @@ class TalksController < ApplicationController
     categories = Category.pluck(:title)
     selected_categories = []
     categories.each do |p|
-      if params["#{p}"] == "1"
+      if params["#{p}"] == "on"
         selected_categories << Category.find_by(title: p)
       end
     end

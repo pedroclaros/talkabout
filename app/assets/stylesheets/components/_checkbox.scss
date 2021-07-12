@@ -1,0 +1,27 @@
+.checkboxinline {
+    display: inline-block;
+}
+
+.checkboxinput {
+    position: absolute;
+    transform: scale(0);
+}
+
+.checkboxinput + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  border-radius: 50rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
+  margin-right: 0.3rem;
+  margin-bottom: 0.4rem;
+
+}
+
+.checkboxinput:checked + label {
+    background-color: #7E73FF;
+    color: white;
+}
