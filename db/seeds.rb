@@ -62,7 +62,7 @@ category12 = Category.create(title: "Otros")
 talk1 = Talk.new(title: "Javascript para dummies", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "15:00", capacity: 10, category: category7, price: 1000, user: user1, info: "zoom meeting id: 1532498740 / password: javascript")
 talk1.save!
 
-talk2 = Talk.new(title: "Creando una empresa de consultorias", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
+talk2 = Talk.new(title: "Como crear una empresa de consultorias", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
 talk2.save!
 
 talk3 = Talk.new(title: "Meditacion en 20 minutos", description: Faker::Lorem.paragraph(sentence_count:4), date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1, info: "zoom meeting id: 7478317419 / password: meditacion")
