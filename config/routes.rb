@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get "myprofile", to: "pages#myprofile"
 
   resources :talks do 
-    resources :appointments
-    resources :favorites, only: :create
+    resources :appointments, only: [:create, :new]
+    resources :favorites, only: [:create, :new]
   end
-end
 
+  resources :appointments, except: [:create, :new]
+  resources :favorites, except: [:create, :new]
+end

@@ -10,4 +10,11 @@ class AppointmentsController < ApplicationController
         redirect_to myprofile_path
         end
     end
+
+    def destroy
+        @appointment = Appointment.find(params[:id])
+        @appointment.delete
+        redirect_to myprofile_path
+        flash[:notice] = "Appointment borrado"
+    end
 end

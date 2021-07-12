@@ -18,14 +18,12 @@ class FavoritesController < ApplicationController
   # end
   # end
 
-
-  # def destroy
-  # @appointment = Appointment.find(params[:id])
-  # @appointment.delete
-  # authorize @appointment
-  # redirect_to confirmation_path
-  # flash[:notice] = "Destruiste tu reserva"
-  # end
+def destroy
+  @talk = Talk.find(params[:id])
+  current_user.unfavorite(@talk)
+  redirect_to myprofile_path
+  flash[:notice] = "Favorito borrado"
+end 
       
   private
       

@@ -7,8 +7,8 @@
   <div class="card m-3 shadow p-3 bg-white rounded w-50">
     <h4><%= talk.title %></h4>
     <div class="row g-0">
-      <div class="col-md-4">
-      <%# <%= cl_image_tag app.service.photo.key, class: "img-fluid rounded-start" %>
+      <div class="col-md-4 pt-3">
+      <%= cl_image_tag talk.photo.key, height: 200, width: 220, crop: :fill %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -19,6 +19,8 @@
           <h6>Fecha y hora: <strong><%= talk.date %> / <%= talk.time.strftime("%I:%M %p")%></h6></strong>
           <h6>Capacidad: <strong><%= talk.capacity.to_i %> personas</h6></strong>
           <br>
+          <%= link_to "Borrar charla", talk_path(talk.id), method: :delete, data: {confirm: "Está seguro que desea eliminar la charla? (todas las citas y favoritos seran borradas!)"}, class:"btn btn-sm btn-danger mt-3" %>  
+          <%= link_to "Editar charla", edit_talk_path(talk), class:"btn btn-sm btn-danger mt-3" %>  
           <h6>Informacion de la charla: <strong><%= talk.info %></h6></strong>
         </div>
       </div>
@@ -36,7 +38,7 @@
     <h4><%= app.talk.title %></h4>
     <div class="row g-0">
       <div class="col-md-4">
-      <%# <%= cl_image_tag app.service.photo.key, class: "img-fluid rounded-start" %>
+      <%= cl_image_tag app.talk.photo.key, height: 200, width: 220, crop: :fill %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -47,6 +49,7 @@
           <h6>Fecha y hora: <strong><%= app.talk.date %> / <%= app.talk.time.strftime("%I:%M %p")%></h6></strong>
           <h6>Capacidad: <strong><%= app.talk.capacity.to_i %> personas</h6></strong>
           <br>
+          <%= link_to "Borrar appointment", appointment_path(app.id), method: :delete, data: {confirm: "Está seguro que desea eliminar el appointment?"}, class:"btn btn-sm btn-danger mt-3" %>  
           <h6>Informacion de la charla: <strong><%= app.talk.info %></h6></strong>
         </div>
       </div>
@@ -61,8 +64,8 @@
 
 <% favoritos.each_with_index do |app, index| %>
   <div class="card m-3 shadow p-3 bg-white rounded w-50">
-  <h6><%= favoritos[index].title %> --- <%= favoritos[index].date %></h6> 
+    <%= link_to "Borrar favorite", favorite_path(app.id), method: :delete, data: {confirm: "Está seguro que desea eliminar el favorito?"}, class:"btn btn-sm btn-danger mt-1 w-25" %>  
+    <h6><%= favoritos[index].title %> --- <%= favoritos[index].date %></h6> 
 </div>
 <% end %>
 </div>
-
