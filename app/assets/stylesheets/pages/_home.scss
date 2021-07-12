@@ -32,9 +32,16 @@
   background-color: #c70f0f;
 }
 
+
 .btn-ghost:hover {
   opacity: 0.8;
 }
+
+
+#test-button {
+  background-color: #FC4A1A !important;
+}
+
 
 
 
@@ -92,6 +99,11 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+.bg {
+  background-color: #7E73FF;
+}
+
 
 .cards {
   display: grid;
