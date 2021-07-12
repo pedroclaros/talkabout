@@ -36,14 +36,15 @@
   
   .card-product .card-product-infos {
     padding: 16px;
+    color: #0E0000!important;
   }
 
-  a {
+  .card-product a {
+    color: #0E0000;
     text-decoration: none;
-  }
+}
 
-  a:hover {
+.card-product a:hover {
+    color: #0E0000;
     text-decoration: none;
-  }
-
-  
+}

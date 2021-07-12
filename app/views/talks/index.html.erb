@@ -1,10 +1,10 @@
-<div class="container mt-4">
+<div class="container marginxl">
   <div class="row">
     <div class="col-12 col-lg-3">
         <%###################### Búsqueda por palabra clave %>
             <%= form_tag talks_path, method: :get do %>
               <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Palabra Clave"%>
-              <%= submit_tag "Buscar", class: "btn btn-primary mb-5" %>
+              <%= submit_tag "Buscar", class: "btn btn-primary mb-5 mt-3 w-50" %>
             <% end %>
 
         <%###################### Filtros %>
@@ -18,14 +18,14 @@
               <%end%>
              
 
-              <%= date_field_tag :filter, params[:filter] ,class: "form-control", placeholder: "Palabra Clave"%>
-              <%= submit_tag "Aplicar filtros", class: "btn btn-primary mb-5" %>
+              <%= date_field_tag :filter, "" ,class: "form-control mt-5", placeholder: "Palabra Clave"%>
+              <%= submit_tag "Aplicar filtros", class: "btn btn-primary mb-5 mt-3 w-50" %>
             <% end %>
     </div>
     <div class="col-12 col-lg-9">
       <%###################### CARDS %>
         <%@talks.each do |talk|%>
-          <%= link_to talk_path(talk) do %>
+          <%= link_to talk_path(talk), class: "resettest" do %>
             <div class="card-product mb-4 p-2" style="height: 150px">
               <% if talk.photo.attached? %> 
                 <%= cl_image_tag talk.photo.key %>
@@ -33,11 +33,15 @@
                 <img src="https://secure-content.meetupstatic.com/images/classic-events/495604835/333x188.webp" />
               <% end %> 
               <div class="card-product-infos">
-                <p>Fecha:  <%=talk.date%></p>
+                <p>Fecha: <%=talk.date.strftime("%b %d")%></p> 
                 <h2><%=talk.title%></h2>
-                <br>
                 <p><%=talk.description%></p>
-                <p> <strong>Precio: </strong><%=talk.price%> $ARG</p>
+                <% if talk.price.present? && talk.price > 0 %> 
+                <p><strong>Precio: </strong>ARS <%= talk.price.to_i %></p>
+                <% else %> 
+                <p><strong>Precio: FREE </strong></p>
+                <% end %> 
+             
                 <p><%=talk.category.title%></p>
               </div>
             </div>

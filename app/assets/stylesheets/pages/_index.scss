@@ -1,14 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
 
+// reset
 
-a {
-    color: #0E0000;
+.resettest {
+    color:#212529;
     text-decoration: none;
 }
 
-a:hover {
-    color: #0E0000;
+.resettest:hover {
+    color: #212529;
     text-decoration: none;
 }
 
+.marginxl {
+    margin-top: 100px;
+}
