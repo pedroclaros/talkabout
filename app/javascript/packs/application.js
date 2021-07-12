@@ -35,10 +35,32 @@ document.addEventListener('turbolinks:load', () => {
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "Está seguro que desea eliminar el appointment?",
-  icon: "success"
+initSweetalert('#sweet-alert-appointment', {
+  title: "Borrar appointment",
+  text: "Está seguro que desea continuar?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#sweet-alert-favorite', {
+  title: "Borrar favorito",
+  text: "Está seguro que desea continuar?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#sweet-alert-talk', {
+  title: "Está seguro que desea eliminar la charla?",
+  text: "todas las citas y favoritos seran borradas!",
+  icon: "warning"
 }, (value) => {
   if (value) {
     const link = document.querySelector('#delete-link');
