@@ -104,6 +104,7 @@
 
 <div class="container">
 
+
   <h2 class = "text-center mt-5">Los más Buscados por los usuarios!</h2>
   <br>
 
@@ -112,7 +113,7 @@
     <%= link_to talk_path(talk) do %>
     <%#= link_to talk_path(talk), style:"text-decoration:none" do %>
     <div class="card-trip">
-    <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" />
+    <%= cl_image_tag talk.photo.key, class: "card-trip-talk" %> 
 
     <div class="card-trip-infos">
     <div>
@@ -120,7 +121,7 @@
     <p class="card-trip-pricings"><%=  talk.description %></p>
     </div>
     <p class="card-trip-pricing">Fecha: <%=  talk.date.strftime('%a %d %b %Y') %></p>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <%= cl_image_tag talk.user.photo.key, class: "card-trip-user avatar-bordered" %>
     </div>
     </div>
     <% end %>
@@ -554,3 +555,53 @@
   </body>
 </html>
 
+=======
+<br>  
+<br>
+
+
+<!--div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Gracias por confiar en <i class="fas fa-heart"></i> Talk/About.
+  </div>
+</div-->
+
+<!--div>
+
+    <div class="cards mt-5">
+    <% @talks.each do |talk| %>   
+    <%= link_to talk_path(talk) do %>
+
+    <div class="card-trip">
+        <%#= cl_image_tag service.photo.key %>
+            <div class="card-trip-infos">
+            <div>
+            <img src="https://www.esic.edu/sites/default/files/2020-07/hablar-en-publico.jpg" class="card-img-top" alt="...">
+            <br>
+            <br>
+            <div class="card-title">
+            <h5><strong><%=  talk.title %>.!</strong></h5>
+            <%# <%= link_to "Ver más..", service_path(service) %>
+            <p class="card-trip-pricings"><%=  talk.description %></p>            
+            <p class="card-trip-pricing">Fecha: <%=  talk.date.strftime('%a %d %b %Y') %></p>
+            </div>
+            <% #=user = @users.sample %>
+              <%#= img src="https://avatars.githubusercontent.com/u/62758510?v=4" alt="user" class= "card-trip-user avatar-bordered"> %>
+              <%##= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>
+              <%# <%= cl_image_tag user.photo.key, class: "card-trip-user avatar-bordered" %>                                 
+        </div>
+        </div>
+        </div>
+         <% end %>
+        <% end %>
+    </div>
+</div>    
+
+</div-->
