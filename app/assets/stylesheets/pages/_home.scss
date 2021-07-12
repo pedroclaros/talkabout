@@ -79,8 +79,7 @@
 }
 
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: rgb(246, 246, 250);
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -99,7 +98,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }
-
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -137,29 +135,26 @@
 }
 
 
-//.card-trip-infos {
-//  color: black;
-//  background-color: rgb(216, 221, 221);
-//  border-radius: 20px;
-//}
+.card-trip-infos {
+  color: black;
+}
 
 
-//.card-title {
-//  margin-left: 10px;
-//  height: 180px;
+.card-title {
+  margin-left: 10px;
+  height: 180px;
+}
 
-//}
-
-//.card-trip-pricing {
-//  color: red; 
-//}
+.card-trip-pricing {
+  color: red;
+}
 
 
 //Nueva card
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: rgb(252, 250, 250);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100%;
 }
@@ -179,7 +174,7 @@
 .card-trip p {
   font-size: 12px;
   opacity: .7;
-  margin: 0;
+  margin: 0; 
 }
 
 
@@ -196,5 +191,26 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+
+
+
+body::before {
+  display: block;
+  content: '';
+  height: 60px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .news-input {
+    width: 50%;
+  }
 }
 
