@@ -179,6 +179,7 @@ talk1.explanation = "Bienvenido al curso de JavaScript, en el que aprenderemos t
 talk1.description = "Rodo lo necesario para dominar el lenguaje de programación más popular"
 talk1.save!
 
+
 talk2.explanation =  "En este curso conocerás y aprenderás:
 
 Manejar conceptos básicos de negocios tales como; empresarismo disruptivo, empresa, etc. Cuál es la realidad del empleo a nivel global y cómo te impacta a ti.
