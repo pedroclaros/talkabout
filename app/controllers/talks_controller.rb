@@ -1,5 +1,6 @@
 class TalksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_talk, only: [:show, :edit, :update, :destroy]
   
   def index 
     categories = Category.pluck(:title)
@@ -44,7 +45,6 @@ class TalksController < ApplicationController
   end
   
   def show
-    @talk = Talk.find(params[:id])
     @appointment = Appointment.new
     @favorite = Favorite.new
   end
@@ -52,7 +52,7 @@ class TalksController < ApplicationController
   def new
     @talk = Talk.new
   end
-
+  
   def create
     @talk = Talk.new(talk_params)
     @talk.user = current_user
@@ -61,6 +61,26 @@ class TalksController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def edit
+  end
+
+  def update
+    @talk.update(talk_params)
+    redirect_to talk_path(@talk)
+  end
+
+  def destroy
+    @talk.destroy
+    redirect_to myprofile_path
+    flash[:notice] = "Charla borrada"
+  end
+private
+
+
+  def set_talk
+    @talk = Talk.find(params[:id])
   end
 
   def talk_params
