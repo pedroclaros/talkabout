@@ -1,0 +1,65 @@
+body {
+	font-family: "Muli-Regular";
+	font-size: 14px;
+	margin: 0;
+	color: #999;
+}
+
+.image-1 {
+	position: absolute;
+	bottom: -12px;
+	left: -191px;
+	z-index: 99;
+}
+.image-2 {
+	position: absolute;
+	bottom: 0;
+	right: -129px;
+}
+
+.form-event {
+    position: relative;
+    z-index: 9;
+}
+
+.main-container {
+    background-color: #ACCFFE;
+}
+
+// #talk_title, #talk_description, #talk_price {
+
+// }
+
+// .btn-event {
+// 	border: none;
+// 	width: 100%;
+// 	height: 49px;
+// 	margin-top: 50px;
+// 	cursor: pointer;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	padding: 0;
+// 	background: #0d6efd;
+// 	color: #fff;
+// 	text-transform: uppercase;
+// 	letter-spacing: 2px;
+// 	transition: all 0.5s;
+//     position: relative;
+//     overflow: hidden;
+// }
+
+// .btn-event:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1;
+//     background-color: rgba(52,152,253,0.25);
+//     -o-transition: all 0.3s;
+//     transition: all 0.3s;
+//     transform: translate(-100%,0);
+//     transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+// }
