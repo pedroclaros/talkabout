@@ -35,27 +35,32 @@ document.addEventListener('turbolinks:load', () => {
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-appointment', {
-  title: "Borrar appointment",
-  text: "Está seguro que desea continuar?",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
-  }
-});
-
 initSweetalert('#sweet-alert-favorite', {
   title: "Borrar favorito",
   text: "Está seguro que desea continuar?",
   icon: "warning"
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
+    const link = document.querySelectorAll('.delete-favorite');
+    link.forEach((btn) => {
+      btn.click()
+    })
   }
 });
+
+initSweetalert('#sweet-alert-appointment', {
+  title: "Borrar appointment",
+  text: "Está seguro que desea continuar?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelectorAll('.delete-appointment');
+    link.forEach((btn) => {
+      btn.click()
+    })
+  }
+});
+
 
 initSweetalert('#sweet-alert-talk', {
   title: "Está seguro que desea eliminar la charla?",
@@ -63,7 +68,9 @@ initSweetalert('#sweet-alert-talk', {
   icon: "warning"
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
-    link.click();
+    const link = document.querySelectorAll('.delete-talk');
+    link.forEach((btn) => {
+      btn.click()
+    })
   }
 });
