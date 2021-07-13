@@ -1,6 +1,7 @@
 <div class="container marginxl">
   <div class="row">
     <div class="col-12 col-lg-3">
+      <div class="stickyfilters">
         <%###################### Búsqueda por palabra clave %>
             <%= form_tag talks_path, method: :get do %>
               <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Palabra Clave"%>
@@ -21,6 +22,7 @@
               <%= date_field_tag :filter, "" ,class: "form-control mt-5", placeholder: "Palabra Clave"%>
               <%= submit_tag "Aplicar filtros", class: "btn btn-primary mb-5 mt-3 w-50" %>
             <% end %>
+      </div>
     </div>
     <div class="col-12 col-lg-9">
       <%###################### CARDS %>

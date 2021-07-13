@@ -1,1 +1,24 @@
-<%= render "form", talk: @talk %>
+<div class="main-container">
+  <div class="container py-5">
+
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+      <%= image_tag "image-1", class: "image-1" %> 
+        <div class="bg-white rounded p-3 shadow form-event">
+          <h1 class= "text-center mb-5">Crea tu evento</h1>
+          <%= simple_form_for [@talk] do |f| %>
+              <%= f.input :title, placeholder: 'Titulo', label: false %>
+              <%= f.input :description, placeholder: 'Escribe la descripcion de tu evento..', label: false %>
+              <%= f.input :price, placeholder: 'Precio en pesos argentinos..', label: false %>
+              <%= f.input :time, placeholder: 'Title' %>
+              <%= f.input :date, placeholder: 'Title' %>
+              <%= f.input :photo, as: :file %>
+              <%= f.association :category, placeholder: 'Category' %>
+              <%= f.submit 'CREAR', class: 'btn-event btn btn-primary w-100' %> 
+            <% end %>
+        </div>
+        <%= image_tag "image-2", class: "image-2" %> 
+      </div>    
+    </div>
+  </div>
+</div>
