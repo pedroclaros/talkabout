@@ -32,3 +32,38 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-appointment', {
+  title: "Borrar appointment",
+  text: "Está seguro que desea continuar?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#sweet-alert-favorite', {
+  title: "Borrar favorito",
+  text: "Está seguro que desea continuar?",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+
+initSweetalert('#sweet-alert-talk', {
+  title: "Está seguro que desea eliminar la charla?",
+  text: "todas las citas y favoritos seran borradas!",
+  icon: "warning"
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
