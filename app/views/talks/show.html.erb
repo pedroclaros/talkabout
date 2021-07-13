@@ -1,12 +1,11 @@
 <div class = "container mt-3">
  <br>
-<h3><strong>Detalles de la charla:</strong></h3>
-<div class="row m-3 shadow p-3 bg-white rounded" style="max-width: 1200px;">
-  <div class="col-8 shadow bg-white rounded">
+<div class="row m-3 shadow p-3 bg-light rounded font-weight-light" style="max-width: 1200px;">
+  <div class="col-6">
 
-    <div class="card-body">
+    <div class="card-body text-justify" >
       <h4><strong><%= @talk.title %></strong></h4>
-      <h6><strong>Nombre del anfitrión: </strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6>
+      <h6 class="font-weight-light"><strong>Nombre del anfitrión: </strong><%= @talk.user.first_name %>, <%= @talk.user.last_name %></h6>
       <br>
       <% if @talk.price.present? && @talk.price > 0 %> 
         <h6><strong>Precio Pesos ARG: </strong>$ <%= @talk.price.to_i %></h6>
@@ -18,23 +17,25 @@
       <h6><strong>Categoria: </strong><%= @talk.category.title %> </h6>
       <h6><strong>Capacidad: </strong><%= @talk.capacity %> personas </h6>
       <br>
-      <h6><strong>Descripción: </strong> <%= @talk.explanation %></h6>
+       <p class="font-weight-light"><%= @talk.explanation %></p>
       <br>
     </div>
 
   </div>
   
-  <div class="col-4 bg-white rounded">
+  <div class="col-6 bg-white rounded mt-2">
     <% if @talk.photo.attached? %> 
-      <%= cl_image_tag @talk.photo.key, height: 300, width: 325, crop: :fill %>
+      <%= cl_image_tag @talk.photo.key, class: "img-fluid w-100 rounded" %>
     <% end %> 
-      <% unless @talk.user == current_user %>
+      <% unless @talk.user == current_user%>
         <%=render 'appointments/form' %>        
       <% end %>
-      <% if current_user&.favorited?(@talk)%> 
-        <h4 class= "btn btn-warning w-100 mb-3">Ya esta agregado a favoritos</h4>
-      <% else %>     
-        <%=render 'favorite/form' %> 
+      <% unless @talk.user == current_user %>
+        <% if current_user&.favorited?(@talk)%> 
+          <h4 class= "btn btn-warning w-100 mb-3">Ya esta agregado a favoritos</h4>
+        <% else %>     
+          <%=render 'favorite/form' %> 
+        <% end %>
       <% end %>
   </div>
               
