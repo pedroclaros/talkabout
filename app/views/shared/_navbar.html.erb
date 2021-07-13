@@ -1,24 +1,18 @@
-<!--div class="navbar navbar-expand-sm navbar-light navbar-lewagon"-->
-  <%#= link_to "/", class: "navbar-brand" do %>
-  <%#= image_tag "logo.svg" %>
- <%#= end %>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
 
-
-
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark py-4 fixed-top">
-<!--nav class="navbar navbar-expand-lg navbar-light bg-light"-->
-  <a class="navbar-brand" href="#"></a>
+  <%= image_tag "newlogoo.svg", class:"nav-logo" %>
+  <!--nav class="navbar navbar-expand-lg navbar-light bg-light"-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
+    <ul class="navbar-nav m-auto">
+      <!--li class="nav-item active">
         <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
-      </li>
+      </li-->
       <li class="nav-item">
-      <%= link_to "Home  |", "/", class: "nav-link" %>
+      <%= link_to "Home       |", "/", class: "nav-link" %>
         
       </li>
       <%= link_to "Crear nuevo evento", new_talk_path, class: "nav-link" %>
@@ -39,14 +33,11 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#"></a>
       </li>
-    </ul>
-      
-
-        <%= form_tag talks_path, method: :get, class:"form-inline" do %>
+                <%= form_tag talks_path, method: :get, class:"form-inline" do %>
           <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Buscar"%>
-          <%= submit_tag "Buscar", class: "btn btn-warning  mb-50" %>
+          <%= submit_tag "Buscar", class: "btn btn-warning" %>
         <% end %>
-          
+    </ul>          
   </div>
 
 
@@ -57,11 +48,12 @@
 
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button-->
+</div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!--div class="collapse navbar-collapse" id="navbarSupportedContent"-->
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
@@ -84,8 +76,7 @@
         </li>
       <% end %>
     </ul>
-  </div>
-</div>
+  <!--/div-->
 
 
 </nav>
