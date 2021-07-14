@@ -1,10 +1,10 @@
-class RestaurantMailer < ApplicationMailer
+class AppointmentMailer < ApplicationMailer
     def create_confirmation
-      @restaurant = params[:restaurant]
+      @appointment = params[:appointment]
   
       mail(
-        to:       @restaurant.user.email,
-        subject:  "Restaurant #{@restaurant.name} created!"
+        to:       @appointment.user.email,
+        subject:  "Appointment #{@appointment.id} created!"
       )
     end
   end
