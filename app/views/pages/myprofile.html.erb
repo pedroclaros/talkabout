@@ -59,8 +59,8 @@
       </div>
       <div class="col-4">
         <%= cl_image_tag app.talk.photo.key, class: "img-fluid w-100 rounded" %>
-          <button id="sweet-alert-appointment" class="btn btn-sm btn-danger w-100 mt-3"> Borrar reserva </button>
-          <%= link_to "", appointment_path(app), method: :delete, id: "delete-appointment", class:"hidden" %> <!-- btn btn-sm btn-danger mt-3" -->
+          <button id="sweet-alert-appointment" data-button-id="delete-appointment-<%= app.id %>" class="btn btn-sm btn-danger w-100 mt-3"> Borrar reserva </button>
+          <%= link_to "", appointment_path(app), method: :delete, id: "delete-appointment-#{app.id}", class:"hidden" %>  <!-- btn btn-sm btn-danger mt-3" -->
       </div>
     </div>
   </div>
@@ -84,8 +84,8 @@
     </div>
     <div class="col-4">
       <%# <%= cl_image_tag favoritos[index].talk.photo.key, class: "img-fluid w-100 rounded" %>
-      <button id="sweet-alert-favorite" class="btn btn-sm btn-danger"> Borrar favorito </button>
-      <%= link_to "", favorite_path(fav.id), method: :delete, class: "delete-favorite", class:"hidden"%> <!-- btn btn-sm btn-danger mt-1 w-25" -->   
+      <button id="sweet-alert-favorite" data-button-id="delete-favorite-<%= fav.id %>" class="btn btn-sm btn-danger"> Borrar favorito </button>
+      <%= link_to "", favorite_path(fav), method: :delete, class: "hidden", id: "delete-favorite-#{fav.id}"%> <!-- btn btn-sm btn-danger mt-1 w-25" --> 
     </div>
   </div>
 <% end %>

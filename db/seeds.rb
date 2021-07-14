@@ -126,6 +126,9 @@ user9 = User.new(email: "user9@abc.com", password: "123456789", first_name: Fake
 user9.photo.attach(io: fileavatar9, filename: 'testavatar2.png', content_type: 'image/png')
 user9.save
 
+user10 = User.new(email: "msantamaria86@gmail.com", password: "123456789", first_name: "Miguel" , last_name: "Santamaria", bio: Faker::Company.bs)
+user10.save
+
 # CREATE CATEGORIES
 category1 = Category.create(title: "Negocios")
 category2 = Category.create(title: "Comida y bebida")

@@ -3,8 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   acts_as_favoritor
   has_one_attached :photo
-  after_create :send_welcome_email
-
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
