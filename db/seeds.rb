@@ -176,7 +176,7 @@ talk10.photo.attach(io: file_service10, filename: 'test2.png', content_type: 'im
 
 
 talk1.explanation = "Bienvenido al curso de JavaScript, en el que aprenderemos todo lo necesario para dominar el lenguaje de programación más popular que existe actualmente y todas las tecnologías a su alrededor con más demanda laboral y más proyección de futuro."
-talk1.description = "Rodo lo necesario para dominar el lenguaje de programación más popular"
+talk1.description = "Todo lo necesario para dominar el lenguaje de programación más popular"
 talk1.save!
 
 

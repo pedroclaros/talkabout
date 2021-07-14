@@ -9,7 +9,7 @@
     <div class="row m-2 rounded font-weight-light">
       <div class="col-8">
         <div class="card-body text-justify">
-          <h4 class="m-3"><%= talk.title %></h4>
+          <h5 class="mt-3"><%= talk.title %></h5>
           <h6 class="font-weight-light"><strong><%= talk.user.first_name %>, <%= talk.user.last_name %></h6></strong>
           <br>
           <h6><%= talk.description %></h6>
@@ -26,8 +26,8 @@
         <% end %>
           <%= link_to "Editar charla", edit_talk_path(talk), class:"btn btn-success w-100 mt-3" %>  
 
-          <button id="sweet-alert-talk" class="btn btn-sm btn-danger w-100 mt-3"> Borrar charla </button>
-          <%= link_to "", talk_path(talk), method: :delete, id: "delete-talk", class:"hidden" %>  
+          <button id="sweet-alert-talk" data-button-id="delete-talk-<%= talk.id %>" class="btn btn-sm btn-danger w-100 mt-3"> Borrar charla </button>
+          <%= link_to "", talk_path(talk), method: :delete, id: "delete-talk-#{talk.id}", class:"hidden" %>  
 
       </div>
     </div>
