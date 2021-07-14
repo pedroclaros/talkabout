@@ -1,6 +1,112 @@
 <br>
+<br>
+<br>
+
+
+<h3 class="mx-4">Hola, <%= current_user.first_name%></h3>
+
+<div class="d-md-flex mx-3">
+
+  <div class="col-md-4 col-12" >
+        
+      <h4 class="my-3"><strong>Eventos creados por vos</h4></strong>
+
+    
+    <% talks = Talk.where(user: current_user) %>
+    <% talks.each do |talk| %>
+      <div class="card-product">
+        <% if talk.photo.attached? %> 
+            <%= cl_image_tag talk.photo.key, class: "img-fluid rounded" %>
+          <% end %>
+          <div class="card-product-infos">          
+            <h2 class="mt-3"><%= talk.title %></h2>
+            <p><strong><%= talk.user.first_name %>, <%= talk.user.last_name %></p></strong>
+            <p><%= talk.description %></p>
+            <p>Precio Pesos ARG: <strong>$ <%= talk.price.to_i %></p></strong>
+            <p>Fecha y hora: <strong><%= talk.date.strftime('%a %d %b %Y') %> / <%= talk.time.strftime("%I:%M %p")%></p></strong>
+            <p>Capacidad: <strong><%= talk.capacity.to_i %> personas</p></strong>
+            <p>Informacion de la charla: <strong><%= talk.info %></p></strong>
+
+          <%= link_to "Editar", edit_talk_path(talk), class:"btn btn-sm btn-success my-2" %>  
+          <button id="sweet-alert-talk" data-button-id="delete-talk-<%= talk.id %>" class="btn btn-sm btn-danger my-2">Eliminar</button>
+          <%= link_to "", talk_path(talk), method: :delete, id: "delete-talk-#{talk.id}", class:"hidden" %>  
+          </div>
+      </div>
+      <% end %>
+       
+  </div>
+
+
+
+
+    <div class="col-md-4 col-12">
+        <h4 class="my-3"><strong> Eventos en los que participaras</h4></strong>
+        
+        <% appointments = Appointment.where(user: current_user) %>
+        <% appointments.each do |app| %>
+          <div class="card-product">
+            <%= cl_image_tag app.talk.photo.key, class: "img-fluid rounded" %>
+            <div class="card-product-infos">
+              <h2 class="mt-3"><%= app.talk.title %></h2>
+              <p><strong><%= app.talk.user.first_name %>, <%= app.talk.user.last_name %></p></strong>
+              <p><%= app.talk.description %></p>
+              <p>Precio Pesos ARG: <strong>$<%= app.talk.price.to_i %></p></strong>
+              <p>Fecha y hora: <strong><%= app.talk.date.strftime('%a %d %b %Y') %> / <%= app.talk.time.strftime("%I:%M %p")%></p></strong>
+              <p>Capacidad: <strong><%= app.talk.capacity.to_i %> personas</p></strong>
+              <p>Informacion de la charla: <strong><%= app.talk.info %></p></strong>
+              <button id="sweet-alert-appointment" class="btn btn-sm btn-danger my-2">Eliminar</button>
+              <%= link_to "", appointment_path(app), method: :delete, id: "delete-appointment", class:"hidden" %> <!-- btn btn-sm btn-danger mt-3" -->
+              </div>
+            </div>
+          <% end %>
+    </div>  
+    
+    
+ 
+  <div class="col-md-4 col-12">
+    
+  <h4 class="my-3 ml-1"><strong> Favoritos</h4></strong>    
+  <% favoritos = current_user.all_favorited%>
+  <% favoritos.each_with_index do |fav, index| %>
+    <div>
+        <div class="row shadow p-2 bg-white rounded mx-1">
+            
+          <%= link_to talk_path(favoritos[index]), style:"text-decoration:none" do %>
+            <div class="col-12">
+              <p><%= favoritos[index].date.strftime('%a %d %b %Y') %></p>
+              <p><%= favoritos[index].title %></p>
+        <div>
+        <button id="sweet-alert-favorite" class="btn btn-sm btn-danger"> Eliminar</button>
+        <%= link_to "", favorite_path(fav.id), method: :delete, class: "delete-favorite", class:"hidden"%>
+        </div>  
+          <% end %>
+        </div>
+        </div>
+  <% end %>
+    </div>      
+  </div>
+</div>
+
+
+
+
+
+
+<!--Hacia arriba probando-->
+
+
+
+
+
+
+
+
+
+
+
+<br>
 <div>
-  <h2 class= "m-4"><strong> Mis eventos creados</h2></strong>
+  <h4 class= "m-4"><strong> Mis eventos creados</h4></strong>
 
   <% talks = Talk.where(user: current_user) %>
   <% talks.each do |talk| %>
