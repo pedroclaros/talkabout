@@ -12,7 +12,8 @@
               <%= f.input :price, placeholder: 'ARS...', label: 'Precio' %>
               <%= f.input :time, placeholder: 'Hora', label: 'Horario' %>
               <%= f.input :date, placeholder: 'Fecha', label: 'Fecha' %>
-              <%= f.input :photo, as: :file, label: 'Foto' %>
+              <%= f.input :photo, as: :file %>
+              <%# <%= f.file_field :photo, label: 'Foto', value: "sube un archivo", class: "btn btn-primary" %> 
               <%= f.association :category, placeholder: 'Category', label: 'Categoría' %>
               <%= f.submit 'CREAR', class: 'btn-event btn btn-primary w-100' %> 
             <% end %>
