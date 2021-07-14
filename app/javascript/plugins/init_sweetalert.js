@@ -8,7 +8,6 @@ const initSweetalert = (selector, options = {}, callback = () => {}) => {
         const link = document.getElementById(event.currentTarget.dataset.buttonId);
         swal(options)
         .then(function() {
-        console.log(event);
         link.click()    
       });
       
