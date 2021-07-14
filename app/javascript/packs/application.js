@@ -68,7 +68,7 @@ initSweetalert('#sweet-alert-talk', {
   icon: "warning"
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-talk');
+    // const link = document.querySelector('#delete-talk');
     const link = document.getElementById(event.currentTarget.dataset.buttonId);
     link.click()    
   }
