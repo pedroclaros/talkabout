@@ -68,9 +68,8 @@ initSweetalert('#sweet-alert-talk', {
   icon: "warning"
 }, (value) => {
   if (value) {
-    const link = document.querySelectorAll('.delete-talk');
-    link.forEach((btn) => {
-      btn.click()
-    })
+    // const link = document.querySelector('#delete-talk');
+    const link = document.getElementById(event.currentTarget.dataset.buttonId);
+    link.click()    
   }
 });
