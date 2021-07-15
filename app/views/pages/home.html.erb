@@ -42,7 +42,7 @@
   <br>
 <!-- Cards: Itero sobre cada talk-->
 <div class="cards hover" >
-  <% @talks.each do |talk| %>
+  <% @talks.first(6).each do |talk| %>
     <%= link_to talk_path(talk), style:"text-decoration:none" do %>
       <div class="card-trip">
         <%= cl_image_tag talk.photo.key, class: "card-trip-talk" %>
