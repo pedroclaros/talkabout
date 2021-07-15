@@ -39,7 +39,8 @@
         <a class="nav-link disabled" href="#"></a>
       </li>
         <%= form_tag talks_path, method: :get, class:"form-inline" do %>
-          <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Escribe aquí"%>
+
+          <%= text_field_tag :query, params[:query] ,class: "form-control", placeholder: "Escriba aquí"%>
             <%= submit_tag "Buscar", class: "btn btn-warning" %>
         <% end %>
    </div>
