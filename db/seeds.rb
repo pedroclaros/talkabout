@@ -63,7 +63,7 @@ file_service1 = URI.open('https://images.unsplash.com/photo-1593720216276-0caa64
 file_service2 = URI.open('https://images.unsplash.com/photo-1538688423619-a81d3f23454b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
 
 #meditacion
-file_service3 = URI.open('https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
+file_service3 = URI.open('https://images.unsplash.com/photo-1474418397713-7ede21d49118?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=736&q=80')
 
 #cerveza
 file_service4 = URI.open('https://images.unsplash.com/photo-1441985969846-3e7c90531139?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
@@ -84,7 +84,7 @@ file_service8 = URI.open('https://images.unsplash.com/photo-1600965962361-9035db
 file_service9 = URI.open('https://images.unsplash.com/photo-1433622070098-754fdf81c929?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
 
 #calzado
-file_service10 = URI.open('https://images.unsplash.com/photo-1477517787936-70ba786643fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
+file_service10 = URI.open('https://images.unsplash.com/photo-1577208288347-b24488f3efa5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80')
 
 #CREATE
 puts "creando seeds"

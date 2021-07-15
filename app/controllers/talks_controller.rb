@@ -75,7 +75,7 @@ class TalksController < ApplicationController
   def destroy
     @talk.destroy
     redirect_to myprofile_path
-    flash[:notice] = "Charla borrada"
+    # flash[:notice] = "Charla borrada"
   end
 private
 
