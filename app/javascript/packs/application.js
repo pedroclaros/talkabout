@@ -26,50 +26,43 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
+import { initSweetalert } from '../plugins/init_sweetalert';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-});
+  initSweetalert("#sweet-alert-talk", {
+    title: "Está seguro que desea eliminar la charla?",
+    text: "todas las citas y favoritos seran borradas!",
+    type: "warning"
+  });
 
-import { initSweetalert } from '../plugins/init_sweetalert';
+  initSweetalert("#sweet-alert-favorite", {
+    title: "Está seguro que desea eliminar el favorito?",
+    type: "warning"
+  });
 
-initSweetalert('#sweet-alert-favorite', {
-  title: "Borrar favorito",
-  text: "Está seguro que desea continuar?",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelectorAll('.delete-favorite');
-    link.forEach((btn) => {
-      btn.click()
-    })
-  }
-});
-
-initSweetalert('#sweet-alert-appointment', {
-  title: "Borrar appointment",
-  text: "Está seguro que desea continuar?",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    const link = document.querySelectorAll('.delete-appointment');
-    link.forEach((btn) => {
-      btn.click()
-    })
-  }
+  initSweetalert("#sweet-alert-appointment", {
+    title: "Está seguro que desea eliminar la reserva?",
+    type: "warning"
+  });
 });
 
 
-initSweetalert('#sweet-alert-talk', {
-  title: "Está seguro que desea eliminar la charla?",
-  text: "todas las citas y favoritos seran borradas!",
-  icon: "warning"
-}, (value) => {
-  if (value) {
-    // const link = document.querySelector('#delete-talk');
-    const link = document.getElementById(event.currentTarget.dataset.buttonId);
-    link.click()    
-  }
-});
+
+
+// const sweetAlert = (id) => {
+
+// };
+
+// initSweetalert('#sweet-alert-talk', {
+
+// }, (value) => {
+//   console.log(value);
+//   if (value) {
+//     const link = document.querySelector('#delete-talk');
+//     // const link = document.getElementById(event.currentTarget.dataset.buttonId);
+//     // link.click()    
+//   }
+// });

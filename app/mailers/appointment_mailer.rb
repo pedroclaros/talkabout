@@ -1,5 +1,5 @@
 class AppointmentMailer < ApplicationMailer
-  def create_confirmation
+  def confirmed
     @appointment = params[:appointment]
 
     mail(

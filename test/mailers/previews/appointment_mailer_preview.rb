@@ -6,7 +6,7 @@ class AppointmentMailerPreview < ActionMailer::Preview
     user = User.first
     appointment = Appointment.first
     # This is how you pass value to params[:user] inside mailer definition!
-    AppointmentMailer.with(user: user).confirmed.deliver_now
+    AppointmentMailer.with(appointment: appointment).confirmed.deliver_now
   end
 
 end

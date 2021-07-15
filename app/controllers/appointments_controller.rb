@@ -2,13 +2,14 @@ class AppointmentsController < ApplicationController
     
     def create
         @talk = Talk.find(params[:talk_id])
-        appointment = Appointment.new
-        appointment.user = current_user
-        appointment.talk = @talk
-        if appointment.save
+        @appointment = Appointment.new
+        @appointment.user = current_user
+        @appointment.talk = @talk
+        if @appointment.save
         flash[:notice] = "Agregado a citas"
-        mail = AppointmentMailer.with(appointment: @appointment).create_confirmation
-        mail.deliver_now
+        mail = AppointmentMailer.with(appointment: @appointment).confirmed
+        wtf = mail.deliver_now
+        puts wtf
         redirect_to myprofile_path
         end
     end

@@ -126,6 +126,9 @@ user9 = User.new(email: "user9@abc.com", password: "123456789", first_name: Fake
 user9.photo.attach(io: fileavatar9, filename: 'testavatar2.png', content_type: 'image/png')
 user9.save
 
+user10 = User.new(email: "msantamaria86@gmail.com", password: "123456789", first_name: "Miguel" , last_name: "Santamaria", bio: Faker::Company.bs)
+user10.save
+
 # CREATE CATEGORIES
 category1 = Category.create(title: "Negocios")
 category2 = Category.create(title: "Comida y bebida")
@@ -147,7 +150,7 @@ category12 = Category.create(title: "Otros")
 talk1 = Talk.new(title: "Javascript para coders principiantes", date: "2021-07-19", time: "15:00", capacity: 10, category: category7, price: 1000, user: user1, info: "zoom meeting id: 1532498740 / password: javascript")
 talk1.photo.attach(io: file_service1, filename: 'test2.png', content_type: 'image/png')
 
-talk2 = Talk.new(title: "Aprende las bases para crear una nueva empresa", date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
+talk2 = Talk.new(title: "Bases para crear una nueva empresa", date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
 talk2.photo.attach(io: file_service2, filename: 'test2.png', content_type: 'image/png')
 
 talk3 = Talk.new(title: "Meditacion en 20 minutos", date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1, info: "zoom meeting id: 7478317419 / password: meditacion")
@@ -198,7 +201,7 @@ Aprende técnicas como el Mindfulness, para que aceptes tus emociones, manejes e
 a través del autoconocimiento y la meditación." 
 talk3.save!
 
-talk4.description = "CTodo el proceso paso a paso en video para que puedas aprender a hacer cerveza en tu casa."
+talk4.description = "Todo el proceso paso a paso en video para que puedas aprender a hacer cerveza en tu casa."
 talk4.explanation =  "Hacer cerveza rica y de calidad en casa es posible.
 Cinco años capacitando futuros cerveceros caseros de manera presencial.
 En esta clase te ofrecemos las distintas partes que forman parte del proceso de elaboración de cerveza en casa en videos de alta calidad. 
