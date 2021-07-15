@@ -1,106 +1,6 @@
-<br>
-<br>
-<br>
-
-
-<h3 class="mx-4">Hola, <%= current_user.first_name%></h3>
-
-<div class="d-md-flex mx-3">
-
-  <div class="col-md-4 col-12" >
-        
-      <h4 class="my-3"><strong>Eventos creados por vos</h4></strong>
-
-    
-    <% talks = Talk.where(user: current_user) %>
-    <% talks.each do |talk| %>
-      <div class="card-product">
-        <% if talk.photo.attached? %> 
-            <%= cl_image_tag talk.photo.key, class: "img-fluid rounded" %>
-          <% end %>
-          <div class="card-product-infos">          
-            <h2 class="mt-3"><%= talk.title %></h2>
-            <p><strong><%= talk.user.first_name %>, <%= talk.user.last_name %></p></strong>
-            <p><%= talk.description %></p>
-            <p>Precio Pesos ARG: <strong>$ <%= talk.price.to_i %></p></strong>
-            <p>Fecha y hora: <strong><%= talk.date.strftime('%a %d %b %Y') %> / <%= talk.time.strftime("%I:%M %p")%></p></strong>
-            <p>Capacidad: <strong><%= talk.capacity.to_i %> personas</p></strong>
-            <p>Informacion de la charla: <strong><%= talk.info %></p></strong>
-
-          <%= link_to "Editar", edit_talk_path(talk), class:"btn btn-sm btn-success my-2" %>  
-          <button id="sweet-alert-talk" data-button-id="delete-talk-<%= talk.id %>" class="btn btn-sm btn-danger my-2">Eliminar</button>
-          <%= link_to "", talk_path(talk), method: :delete, id: "delete-talk-#{talk.id}", class:"hidden" %>  
-          </div>
-      </div>
-      <% end %>
-       
-  </div>
-
-
-
-
-    <div class="col-md-4 col-12">
-        <h4 class="my-3"><strong> Eventos en los que participaras</h4></strong>
-        
-        <% appointments = Appointment.where(user: current_user) %>
-        <% appointments.each do |app| %>
-          <div class="card-product">
-            <%= cl_image_tag app.talk.photo.key, class: "img-fluid rounded" %>
-            <div class="card-product-infos">
-              <h2 class="mt-3"><%= app.talk.title %></h2>
-              <p><strong><%= app.talk.user.first_name %>, <%= app.talk.user.last_name %></p></strong>
-              <p><%= app.talk.description %></p>
-              <p>Precio Pesos ARG: <strong>$<%= app.talk.price.to_i %></p></strong>
-              <p>Fecha y hora: <strong><%= app.talk.date.strftime('%a %d %b %Y') %> / <%= app.talk.time.strftime("%I:%M %p")%></p></strong>
-              <p>Capacidad: <strong><%= app.talk.capacity.to_i %> personas</p></strong>
-              <p>Informacion de la charla: <strong><%= app.talk.info %></p></strong>
-               <button id="sweet-alert-appointment" data-button-id="delete-appointment-<%= app.id %>" class="btn btn-sm btn-danger w-100 mt-3"> Borrar reserva </button>
-          <%= link_to "", appointment_path(app), method: :delete, id: "delete-appointment-#{app.id}", class:"hidden" %>  <!-- btn btn-sm btn-danger mt-3" -->
-              </div>
-            </div>
-          <% end %>
-    </div>  
-    
-    
- 
-  <div class="col-md-4 col-12">
-    
-  <h4 class="my-3 ml-1"><strong> Favoritos</h4></strong>    
-  <% favoritos = current_user.all_favorited%>
-  <% favoritos.each_with_index do |fav, index| %>
-    <div>
-        <div class="row shadow p-2 bg-white rounded mt-3 mx-1">
-            
-          <%= link_to talk_path(favoritos[index]), style:"text-decoration:none" do %>
-            <div class="col-12">
-              <p><%= favoritos[index].date.strftime('%a %d %b %Y') %></p>
-              <p><%= favoritos[index].title %></p>
-        <div>
-          <% end %>
-       <button id="sweet-alert-favorite" data-button-id="delete-favorite-<%= fav.id %>" class="btn btn-sm btn-danger"> Borrar favorito </button>
-      <%= link_to "", favorite_path(fav), method: :delete, class: "hidden", id: "delete-favorite-#{fav.id}"%> <!-- btn btn-sm btn-danger mt-1 w-25" --> 
-        </div>  
-        </div>
-        </div>
-  <% end %>
-    </div>      
-  </div>
-</div>
-
-
-
-
 
 
 <!--Hacia arriba probando-->
-
-
-
-
-
-
-
-
 
 <!--
 
@@ -196,3 +96,83 @@
 </div>
 
 -->
+
+
+
+<%# INICIO - tabsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss %>
+<div class= "container marginxl">
+  <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Asistiré</button>
+      <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Favoritos</button>
+      <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Mis eventos</button>
+    </div>
+    <div class="tab-content w-75" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <%# ASISTIRÉ - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+        <% appointments = Appointment.where(user: current_user) %>
+        <% appointments.each do |app| %>
+          <div class="card-product mb-4 p-2" style="height: 200px" >
+            <%= cl_image_tag app.talk.photo.key%>
+            <div class="card-product-infos w-100">
+              <p><strong>Fecha y hora:</strong> <%=app.talk.date.strftime("%b %d") %> - <%= app.talk.time.strftime("%I:%M %p")%></p> 
+              <h2 class= "mt-2"><%= app.talk.title %></h2>
+              <p><%= app.talk.description %></p>
+              <p><strong>Capacidad:</strong> <%= app.talk.capacity.to_i %> personas</p>
+              <p><strong>Acceso:</strong> <%= app.talk.info %></p>
+              <button id="sweet-alert-appointment" data-button-id="delete-appointment-<%= app.id %>" class="btn btn-sm btn-danger w-100 mt-3"> NO ASISTIRÉ </button>
+              <%= link_to "", appointment_path(app), method: :delete, id: "delete-appointment-#{app.id}", class:"hidden" %>
+            </div>
+          </div>
+        <% end %>
+        <%# ASISTIRÉ - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <%# FAVORITOS - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+        <% favoritos = current_user.all_favorited%>
+         <% favoritos.each_with_index do |fav, index| %>
+          <div class="card-product mb-4 p-2" style="height: 200px" >
+            <%= cl_image_tag fav.photo.key%>
+            <div class="card-product-infos w-100">
+              <p><strong>Fecha y hora:</strong> <%= favoritos[index].date.strftime('%a %d %b %Y') %></p> 
+              <h2 class= "mt-2"><%= favoritos[index].title %></h2>
+              <p><%= fav.description %></p>
+              <br>
+              <br>
+              <button id="sweet-alert-favorite" data-button-id="delete-favorite-<%= fav.id %>" class="btn btn-sm btn-danger w-100"> YA NO ME GUSTA </button>
+              <%= link_to "", favorite_path(fav), method: :delete, class: "hidden", id: "delete-favorite-#{fav.id}"%>
+            </div>
+          </div>
+        <% end %>
+        <%# FAVORITOS - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+      </div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+        <%# MIS EVENTOS - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+      <% talks = Talk.where(user: current_user) %>
+        <% talks.each do |talk| %>
+          <div class="card-product mb-4 p-2" style="height: 200px" >
+              <% if talk.photo.attached? %> 
+                <%= cl_image_tag talk.photo.key%>
+              <% end %>
+              <div class="card-product-infos w-100">
+              <p><strong>Fecha y hora:</strong> <%=talk.date.strftime("%b %d") %> - <%= talk.time.strftime("%I:%M %p")%></p> 
+              <h2 class= "mt-2"><%= talk.title %></h2>
+              <p><strong>Capacidad:</strong> <%= talk.capacity.to_i %> personas</p>
+              <br>
+              <div class="d-grid gap-2">
+              <%= link_to "EDITAR", edit_talk_path(talk), class:"btn btn-primary btn-sm text-white" %>  
+                <button id="sweet-alert-talk" data-button-id="delete-talk-<%= talk.id %>" class="btn btn-danger btn-sm">CANCELAR EVENTO</button>
+                <%= link_to "", talk_path(talk), method: :delete, id: "delete-talk-#{talk.id}", class:"hidden" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <%# MIS EVENTOS - TABS CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# SCRIPT - tabsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<%# FIN - tabsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss %>
