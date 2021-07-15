@@ -137,6 +137,8 @@
               <p><strong>Fecha y hora:</strong> <%= favoritos[index].date.strftime('%a %d %b %Y') %></p> 
               <h2 class= "mt-2"><%= favoritos[index].title %></h2>
               <p><%= fav.description %></p>
+              <br>
+              <br>
               <button id="sweet-alert-favorite" data-button-id="delete-favorite-<%= fav.id %>" class="btn btn-sm btn-danger w-100"> YA NO ME GUSTA </button>
               <%= link_to "", favorite_path(fav), method: :delete, class: "hidden", id: "delete-favorite-#{fav.id}"%>
             </div>
@@ -155,8 +157,8 @@
               <div class="card-product-infos w-100">
               <p><strong>Fecha y hora:</strong> <%=talk.date.strftime("%b %d") %> - <%= talk.time.strftime("%I:%M %p")%></p> 
               <h2 class= "mt-2"><%= talk.title %></h2>
-              <p><%= talk.description %></p>
               <p><strong>Capacidad:</strong> <%= talk.capacity.to_i %> personas</p>
+              <br>
               <div class="d-grid gap-2">
               <%= link_to "EDITAR", edit_talk_path(talk), class:"btn btn-primary btn-sm text-white" %>  
                 <button id="sweet-alert-talk" data-button-id="delete-talk-<%= talk.id %>" class="btn btn-danger btn-sm">CANCELAR EVENTO</button>
