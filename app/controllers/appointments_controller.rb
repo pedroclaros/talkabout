@@ -6,10 +6,9 @@ class AppointmentsController < ApplicationController
         @appointment.user = current_user
         @appointment.talk = @talk
         if @appointment.save
-        flash[:notice] = "Agregado a citas"
-        mail = AppointmentMailer.with(appointment: @appointment).confirmed
-        # wtf = mail.deliver_now
-        # puts wtf
+        # flash[:notice] = "Agregado a citas"
+        #mail = AppointmentMailer.with(appointment: @appointment).confirmed
+        #mail.deliver_now
         redirect_to myprofile_path
         end
     end
@@ -18,6 +17,6 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.find(params[:id])
         @appointment.delete
         redirect_to myprofile_path
-        flash[:notice] = "Reserva borrada"
+        # flash[:notice] = "Reserva borrada"
     end
 end

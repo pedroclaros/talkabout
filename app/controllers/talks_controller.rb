@@ -2,6 +2,7 @@ class TalksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
   
+
   def index 
     categories = Category.pluck(:title)
     selected_categories = []
@@ -74,7 +75,7 @@ class TalksController < ApplicationController
   def destroy
     @talk.destroy
     redirect_to myprofile_path
-    flash[:notice] = "Charla borrada"
+    # flash[:notice] = "Charla borrada"
   end
 private
 
