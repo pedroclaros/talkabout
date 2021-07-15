@@ -32,7 +32,7 @@
       <% end %>
       <% unless @talk.user == current_user %>
         <% if current_user&.favorited?(@talk)%> 
-          <h4 class= "btn btn-warning w-100 mb-3">Ya esta agregado a favoritos</h4>
+          <h4 class= "btn btn-warning w-100 mb-3">Agregado a favoritos</h4>
         <% else %>     
           <%=render 'favorite/form' %> 
         <% end %>
@@ -44,5 +44,5 @@
     <% %>
   </div>
 </div>
-<%# <%= link_to "Volver al inicio!", root_path, class: "btn btn-secondary "%>
+<%= link_to "Volver al inicio!", root_path, class: "btn btn-primary ml-3"%>
  

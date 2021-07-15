@@ -8,7 +8,8 @@ class AppointmentsController < ApplicationController
         if @appointment.save
         flash[:notice] = "Agregado a citas"
         mail = AppointmentMailer.with(appointment: @appointment).confirmed
-        mail.deliver_now
+        wtf = mail.deliver_now
+        puts wtf
         redirect_to myprofile_path
         end
     end
