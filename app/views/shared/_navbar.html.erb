@@ -1,18 +1,12 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
 
-<<<<<<< HEAD
-  <!--Logo-->
-  <%= image_tag "newlogoo2.svg", class:"nav-logo" %>
-  
-  <!--Toglle Button-->  
-=======
   <%= link_to "/", class: "navbar-brand" do %>
   <%= image_tag "newlogoo2.svg", class:"nav-logo" %>
   <% end %>
 
   <!--nav class="navbar navbar-expand-lg navbar-light bg-light"-->
->>>>>>> 4f1e47c6a139de8466842476b506e8fdce843c7a
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,16 +27,10 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "Todos los Eventos", talks_path, class: "dropdown-item" %>
           <%= link_to "Busqueda Avanzada", talks_path, class: "dropdown-item" %>
-<<<<<<< HEAD
-          <%= link_to "Registrarme", new_user_session_path, class: "dropdown-item" %>            
-          <a class="dropdown-item" href="#questions">Preguntas Frecuentes</a>
-            <div class="dropdown-divider"></div>
-=======
           <%# <%= link_to "Registrarme", new_user_session_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="#"></a>            
           <a class="dropdown-item" href="/#questions">Preguntas Frecuentes</a>
           <div class="dropdown-divider"></div>
->>>>>>> 4f1e47c6a139de8466842476b506e8fdce843c7a
           <%= link_to "Volver al home", root_path, class: "dropdown-item" %>
         </div>
       </li>
@@ -56,14 +44,7 @@
    </div>
 
   <!--Login-->
-<<<<<<< HEAD
-  <ul class="navbar-nav mr-0">
-    <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to "Mi perfil", myprofile_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item dropdown">
-=======
+
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
@@ -72,7 +53,6 @@
           <%= link_to "Mi perfil", myprofile_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
->>>>>>> 4f1e47c6a139de8466842476b506e8fdce843c7a
         <% if current_user.photo.attached? %> 
               <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
