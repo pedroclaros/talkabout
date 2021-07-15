@@ -2,6 +2,7 @@ class TalksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
   
+
   def index 
     categories = Category.pluck(:title)
     selected_categories = []
