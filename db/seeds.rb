@@ -91,7 +91,7 @@ puts "creando seeds"
 
 #CREATE USERS
 user1 = User.new(email: "user1@abc.com", password: "123456789", first_name: Faker::Name.name , last_name: Faker::Name.last_name, bio: Faker::Company.bs)
-user1.photo.attach(io: fileavatar1, filename: 'testavatar2.png', content_type: 'image/png')
+user1.photo.attach(io: fileavatar3, filename: 'testavatar2.png', content_type: 'image/png')
 user1.save
 
 user2 = User.new(email: "user2@abc.com", password: "123456789", first_name: Faker::Name.name , last_name: Faker::Name.last_name, bio: Faker::Company.bs)
@@ -99,7 +99,7 @@ user2.photo.attach(io: fileavatar2, filename: 'testavatar2.png', content_type: '
 user2.save
 
 user3 = User.new(email: "user3@abc.com", password: "123456789", first_name: Faker::Name.name , last_name: Faker::Name.last_name, bio: Faker::Company.bs)
-user3.photo.attach(io: fileavatar3, filename: 'testavatar2.png', content_type: 'image/png')
+# user3.photo.attach(io: fileavatar3, filename: 'testavatar2.png', content_type: 'image/png')
 user3.save
 
 user4 = User.new(email: "user4@abc.com", password: "123456789", first_name: Faker::Name.name , last_name: Faker::Name.last_name, bio: Faker::Company.bs)
@@ -126,7 +126,8 @@ user9 = User.new(email: "user9@abc.com", password: "123456789", first_name: Fake
 user9.photo.attach(io: fileavatar9, filename: 'testavatar2.png', content_type: 'image/png')
 user9.save
 
-user10 = User.new(email: "msantamaria86@gmail.com", password: "123456789", first_name: "Miguel" , last_name: "Santamaria", bio: Faker::Company.bs)
+user10 = User.new(email: "pedroclaros@hotmail.com", password: "123456", first_name: "Pedro" , last_name: "Claros", bio: Faker::Company.bs)
+user10.photo.attach(io: fileavatar1, filename: 'testavatar2.png', content_type: 'image/png')
 user10.save
 
 # CREATE CATEGORIES
@@ -153,17 +154,17 @@ talk1.photo.attach(io: file_service1, filename: 'test2.png', content_type: 'imag
 talk2 = Talk.new(title: "Bases para crear una nueva empresa", date: "2021-07-19", time: "16:00", capacity: 8, category: category1, price: 900, user: user1, info: "zoom meeting id: 9687414159 / password: empresa")
 talk2.photo.attach(io: file_service2, filename: 'test2.png', content_type: 'image/png')
 
-talk3 = Talk.new(title: "Meditacion en 20 minutos", date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1, info: "zoom meeting id: 7478317419 / password: meditacion")
-talk3.photo.attach(io: file_service3, filename: 'test2.png', content_type: 'image/png')
-
-talk4 = Talk.new(title: "Preparacion de cerveza artesanal", date: "2021-07-17", time: "15:00", capacity: 5, category: category2, price: 1200, user: user1, info: "zoom meeting id: 9617453698 / password: cerveza")
-talk4.photo.attach(io: file_service4, filename: 'test2.png', content_type: 'image/png')
-
 talk5 = Talk.new(title: "Como escojer el coche adecuado para ti", date: "2021-07-19", time: "18:00", capacity: 20, category: category5, user: user2, info: "zoom meeting id: 1528747483 / password: coche")
 talk5.photo.attach(io: file_service5, filename: 'test2.png', content_type: 'image/png')
 
+talk3 = Talk.new(title: "Meditacion en 20 minutos", date: "2021-07-17", time: "12:00", capacity: 15, category: category9, price: 500, user: user1, info: "zoom meeting id: 7478317419 / password: meditacion")
+talk3.photo.attach(io: file_service3, filename: 'test2.png', content_type: 'image/png')
+
 talk6 = Talk.new(title: "Preparacion para correr un maratón", date: "2021-07-19", time: "15:00", capacity: 10, category: category6, price: 1000, user: user2, info: "zoom meeting id: 6563018740 / password: maratón")
 talk6.photo.attach(io: file_service6, filename: 'test2.png', content_type: 'image/png')
+
+talk4 = Talk.new(title: "Preparacion de cerveza artesanal", date: "2021-07-17", time: "15:00", capacity: 5, category: category2, price: 1200, user: user1, info: "zoom meeting id: 9617453698 / password: cerveza")
+talk4.photo.attach(io: file_service4, filename: 'test2.png', content_type: 'image/png')
 
 talk7 = Talk.new(title: "Autocuidado para proteger a la familia", date: "2021-07-18", time: "11:00", capacity: 12, category: category3, price: 800, user: user2, info: "zoom meeting id: 7858777209 / password: pandemia")
 talk7.photo.attach(io: file_service7, filename: 'test2.png', content_type: 'image/png')
