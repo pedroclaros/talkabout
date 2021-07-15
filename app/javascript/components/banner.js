@@ -2,8 +2,8 @@ import Typed from 'typed.js';
 
 const loadDynamicBannerText = () => {
   new Typed('#banner-typed-text', {
-    strings: ["Online"],
-    typeSpeed: 2000,
+    strings: ["cursos", "Cursos", "Capacitaciones", "Eventos en vivo", "Conversaciones", "Webinars"],
+    typeSpeed: 100,
     loop: true
   });
 }
