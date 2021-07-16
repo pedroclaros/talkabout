@@ -32,7 +32,7 @@
       <h6><strong>Fecha: </strong><%= @talk.date %></h6>
       <h6><strong>Hora: </strong><%= @talk.time.strftime("%I:%M %p") %></h6>
       <h6><strong>Categoria: </strong><%= @talk.category.title %> </h6>
-      <h6><strong>Capacidad: </strong><%= @talk.capacity %> personas </h6>
+      <h6><strong>Capacidad: </strong><%= @talk.capacity.to_i %> personas </h6>
       <br>
        <p class="font-weight-light"><%= @talk.explanation %></p>
       <br>
@@ -44,7 +44,9 @@
 
 <%if @talk.user != current_user %>
 <div class="container">
-  <%= render 'shared/review' %>
+    <%= render 'shared/review' %>
+  <% else %>
+    <%= render 'shared/spaces' %>
 </div>
 <% end %>
 <%# <%= link_to "Volver al inicio!", root_path, class: "btn btn-primary ml-3"%>

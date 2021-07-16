@@ -85,7 +85,7 @@ private
   end
 
   def talk_params
-    params.require(:talk).permit(:title, :description, :time, :date, :price, :category_id, :photo)
+    params.require(:talk).permit(:title, :description, :time, :date, :price, :category_id, :photo, :capacity)
   end
 
 end
