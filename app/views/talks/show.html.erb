@@ -45,7 +45,9 @@
 <%if @talk.user != current_user %>
 <div class="container">
     <%= render 'shared/review' %>
+</div>
   <% else %>
+<div class="container">
     <%= render 'shared/spaces' %>
 </div>
 <% end %>
