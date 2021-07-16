@@ -42,8 +42,10 @@
   <!--% %-->
 </div>
 
+<%if @talk.user != current_user %>
 <div class="container">
   <%= render 'shared/review' %>
 </div>
+<% end %>
 <%# <%= link_to "Volver al inicio!", root_path, class: "btn btn-primary ml-3"%>
  
