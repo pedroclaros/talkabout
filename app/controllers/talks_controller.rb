@@ -88,4 +88,5 @@ private
     params.require(:talk).permit(:title, :description, :time, :date, :price, :category_id, :photo, :capacity)
   end
 
+  
 end
